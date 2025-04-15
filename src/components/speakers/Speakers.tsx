@@ -1,14 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { speakers } from '@/lib/data';
-import { Linkedin, Twitter } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+// import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import SpeakerCard from './SpeakerCard';
-import SpeakersBackground from './SpeakersBackground'; // Import the background component
+import SpeakersBackground from './SpeakersBackground';
 
 const Speakers: React.FC = () => {
   const [selectedSpeaker, setSelectedSpeaker] = useState<string | null>(null);
@@ -17,7 +16,7 @@ const Speakers: React.FC = () => {
 
   return (
     <section id="speakers" className="bg-darkest-blue relative">
-      {/* Add the animated background */}
+      {/* Background Animation */}
       <SpeakersBackground />
 
       <div className="container mx-auto px-4 relative z-10">
@@ -35,6 +34,7 @@ const Speakers: React.FC = () => {
               key={speaker.id}
               speaker={speaker}
               index={index}
+              onViewProfile={(id) => setSelectedSpeaker(id)} // Pass the callback
             />
           ))}
         </div>
@@ -47,10 +47,10 @@ const Speakers: React.FC = () => {
             <>
               <DialogHeader>
                 <DialogTitle className="text-2xl font-bold flex items-center gap-4">
-                  <Avatar className="w-12 h-12 border-2 border-default-blue">
+                  {/* <Avatar className="w-12 h-12 border-2 border-default-blue">
                     <AvatarImage src={selected.image} alt={selected.name} />
                     <AvatarFallback className="bg-default-blue">{selected.name.charAt(0)}</AvatarFallback>
-                  </Avatar>
+                  </Avatar> */}
                   <div>
                     {selected.name}
                     <p className="text-accent-blue text-sm font-normal mt-1">
