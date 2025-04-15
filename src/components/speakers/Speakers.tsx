@@ -16,7 +16,7 @@ const Speakers: React.FC = () => {
   const selected = selectedSpeaker ? speakers.find((speaker) => speaker.id === selectedSpeaker) : null;
 
   return (
-    <section id="speakers" className="py-24 bg-darkest-blue relative">
+    <section id="speakers" className="bg-darkest-blue relative">
       {/* Add the animated background */}
       <SpeakersBackground />
 
@@ -72,19 +72,9 @@ const Speakers: React.FC = () => {
                 </div>
 
                 <div className="flex gap-3 mt-6">
-                  {selected.socialLinks?.twitter && (
+                  {selected.linkedin && (
                     <a
-                      href={selected.socialLinks.twitter}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-default-blue/10 text-default-blue hover:bg-default-blue/20 transition-colors"
-                    >
-                      <Twitter size={18} />
-                    </a>
-                  )}
-                  {selected.socialLinks?.linkedin && (
-                    <a
-                      href={selected.socialLinks.linkedin}
+                      href={selected.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-2 rounded-full bg-default-blue/10 text-default-blue hover:bg-default-blue/20 transition-colors"
