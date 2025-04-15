@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
       
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-darkest-blue flex flex-col items-center py-6 z-100 shadow-lg">
+        <div className="absolute top-full left-0 w-full bg-darkest-blue flex flex-col items-center py-6 z-10 shadow-lg">
           <div className="flex flex-col gap-6 md:hidden">
             <a href="/" className="hover:text-white text-center transition-colors duration-300">
               Speaker

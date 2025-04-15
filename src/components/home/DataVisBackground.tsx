@@ -21,7 +21,6 @@ const DataVisBackground: React.FC<DataVisBackgroundProps> = ({ className }) => {
 
   return (
     <div className={`absolute inset-0 overflow-hidden ${className}`}>
-      {/* Gradient Background */}
       <div className="absolute inset-0 bg-darkest-blue opacity-30" />
 
       {/* Left Side Animations */}

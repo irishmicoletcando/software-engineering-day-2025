@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.6 }}
         >
           {/* Title */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
             <span className="block text-white">{`<Software Engineering/>`}</span>
             <span className="text-gradient bg-gradient-to-r from-accent-blue to-light-blue bg-clip-text text-transparent block">
               Day 2025
@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
               className="bg-gradient-to-r from-dark-blue to-accent-blue hover:from-dark-blue hover:to-default-blue text-white px-6 py-3 text-sm md:text-md rounded-full shadow-lg transform transition-transform hover:scale-105 flex items-center group"
             >
