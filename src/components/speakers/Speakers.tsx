@@ -8,6 +8,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Badge } from '@/components/ui/badge';
 import SpeakerCard from './SpeakerCard';
 import SpeakersBackground from './SpeakersBackground';
+import SectionHeading from '../common/SectionHeading';
 
 const Speakers: React.FC = () => {
   const [selectedSpeaker, setSelectedSpeaker] = useState<string | null>(null);
@@ -20,14 +21,12 @@ const Speakers: React.FC = () => {
       <SpeakersBackground />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <span className="text-accent-blue uppercase tracking-wider text-sm font-medium">Expert Presenters</span>
-          <h2 className="text-4xl font-bold mt-2 mb-4 text-white">Meet Our Speakers</h2>
-          <p className="text-gray-300 text-lg">
-            Learn from industry leaders and experts who are shaping the future of Big Data and Machine Learning.
-          </p>
-        </div>
-
+        <SectionHeading 
+          subtitle="Expert Presenters"
+          title="Meet Our Speakers"
+          description="Learn from industry leaders and experts who are shaping the future of Big Data and Machine Learning."
+        />
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {speakers.map((speaker, index) => (
             <SpeakerCard
