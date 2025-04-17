@@ -1,4 +1,4 @@
-import { Speaker } from "@/types/events";
+import { Speaker, Seminar } from "@/types/events";
 
 export const speakers: Speaker[] = [
   {
@@ -107,8 +107,121 @@ export const speakers: Speaker[] = [
     company: "PayMongo",
     bio: "Josh Quinto is a degree holder of Doctor of Business Administration with 19 years of intensive experience in financial institutions and FinTechs. He currently serves as the Chief Risk and Compliance Officer at PayMongo and sits on the Board of Trustees of the Association of Remittance Compliance Officers. He is a Certified Risk Analyst (CRA®) accredited by the Global Academy of Finance and Management, and is also certified in Bank Risk Management by the Asian Institute of Chartered Bankers. Additionally, he holds a Six Sigma Green Belt certification from Six Sigma Philippines. He has held key roles in organizations such as Maya, Uploan PH, PNB, EastWest Bank, UniCapital Inc., and BPI, bringing a wealth of expertise in risk, compliance, and financial strategy.",
     image: "/assets/josh_quinto.jpg",
-    linkedin: "https://www.linkedin.com/in/joshquinto",
+    linkedin: "https://www.linkedin.com/in/josh-quinto-dba-cra-4b473a46/",
     topics: ["Risk Management", "Compliance", "FinTech"],
     schedule: "May 8, 2025 - 2:50 PM",
   }
 ]  
+
+export const seminars: Seminar[] = [
+  {
+    id: "seminar1",
+    title: "Cracking the Code Behind Big Data",
+    description: "Discover what Big Data is and how it is transforming industries like healthcare and finance. Get introduced to powerful tools like Hadoop, Spark, and cloud platforms through demos and real-world examples",
+    date: "May 5, 2025",
+    time: "2:50 PM",
+    duration: 50,
+    topics: ["Big Data", "Hadoop", "Spark", "Cloud Computing"],
+    speakerId: "speaker1",
+  },
+  {
+    id: "seminar2",
+    title: "From Raw Data to Career-Ready Skills",
+    description: "Learn the basics of data collection, cleaning, and visualization using beginner-friendly tools like Tableau and Power BI. Explore career paths in Big Data and how to build a strong data portfolio.",
+    date: "May 6, 2025",
+    time: "9:35 AM",
+    duration: 50,
+    topics: ["Big Data", "Data Collection", "Data Cleaning", "Data Visualization", "Tableau", "Power BI"],
+    speakerId: "speaker2",
+  },
+  {
+    id: "seminar3",
+    title: "Streamlining Project Management with GitHub: Collaboration, Version Control, and Workflow Optimization",
+    description: "Master Git and GitHub for version control, collaboration, and project workflow. Learn key practices like branching, pull requests, and conflict resolution.",
+    date: "May 6, 2025",
+    time: "10:50 AM",
+    duration: 50,
+    topics: ["GitHub", "Git", "Version Control"],
+    speakerId: "speaker3",
+  },
+  {
+    id: "seminar4",
+    title: "Understanding AR: Fundamentals, Applications, and Trends",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    date: "May 6, 2025",
+    time: "1:05 PM",
+    duration: 50,
+    topics: ["Lorem", "ipsum", "dolor"],
+    speakerId: "speaker4",
+  },
+  {
+    id: "seminar5",
+    title: "The Power of Connection: Exploring the Salesforce World",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    date: "May 6, 2025",
+    time: "2:20 PM",
+    duration: 50,
+    topics: ["Lorem", "ipsum", "dolor"],
+    speakerId: "speaker5",
+  },
+  {
+    id: "seminar6",
+    title: "The SAP Advantage: Streamlining Your Business Operations",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    date: "May 6, 2025",
+    time: "3:35 PM",
+    duration: 50,
+    topics: ["Lorem", "ipsum", "dolor"],
+    speakerId: "speaker6",
+  },
+  {
+    id: "seminar7",
+    title: "Demystifying Artificial Intelligence: Guide to Understanding and Navigating the Age of AI",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    date: "May 8, 2025",
+    time: "9:35 AM",
+    duration: 50,
+    topics: ["Lorem", "ipsum", "dolor"],
+    speakerId: "speaker7",
+  },
+  {
+    id: "seminar8",
+    title: "From Pixels to Insights: Machine Learning for Image Processing and Analysis",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    date: "May 8, 2025",
+    time: "10:50 AM",
+    duration: 50,
+    topics: ["Lorem", "ipsum", "dolor"],
+    speakerId: "speaker8",
+  },
+  {
+    id: "seminar9",
+    title: "Rise of the Machines: Exploring the World of Robotics",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    date: "May 8, 2025",
+    time: "1:35 PM",
+    duration: 50,
+    topics: ["Lorem", "ipsum", "dolor"],
+    speakerId: "speaker9",
+  },
+  {
+    id: "seminar10",
+    title: "A Day in Fintech: Transforming Finance Through Innovation",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    date: "May 8, 2025",
+    time: "2:50 PM",
+    duration: 50,
+    topics: ["Lorem", "ipsum", "dolor"],
+    speakerId: "speaker10",
+  }
+]
+
+export const getSeminarsBySpeaker = (speakerId: string): Seminar[] => {
+  return seminars.filter(seminar => seminar.speakerId === speakerId);
+};
+
+export const getSpeakerBySeminar = (seminarId: string): Speaker | undefined => {
+  const seminar = seminars.find(s => s.id === seminarId);
+  if (!seminar) return undefined;
+  return speakers.find(speaker => speaker.id === seminar.speakerId);
+};

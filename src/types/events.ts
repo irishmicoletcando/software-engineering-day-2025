@@ -9,3 +9,14 @@ export interface Speaker {
   topics?: string[];
   schedule?: string;
 }
+
+export interface Seminar {
+  id: string;
+  title: string;
+  description: string;
+  date: string;
+  time: string;
+  duration: number;
+  topics: string[];
+  speakerId: string;
+}
