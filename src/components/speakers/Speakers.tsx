@@ -16,11 +16,11 @@ const Speakers: React.FC = () => {
   const selected = selectedSpeaker ? speakers.find((speaker) => speaker.id === selectedSpeaker) : null;
 
   return (
-    <section id="speakers" className="bg-darkest-blue relative">
+    <section id="speakers" className="bg-darkest-blue relative px-8 md:px-14">
       {/* Background Animation */}
       <SpeakersBackground />
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto relative z-10">
         <SectionHeading 
           subtitle="Expert Presenters"
           title="Meet Our Speakers"
