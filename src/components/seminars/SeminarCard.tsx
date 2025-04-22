@@ -24,7 +24,7 @@ const SeminarCard: React.FC<SeminarCardProps> = ({ seminar, index, onViewDetails
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: index * 0.05 }}
     >
-      <Card className="bg-darkest-blue border border-default-blue/10 hover:border-accent-blue/30 hover:shadow-lg hover:shadow-accent-blue/5 hover:-translate-y-1 transition-all duration-300 ease-in-out overflow-hidden group">
+      <Card className="bg-darkest-blue border border-default-blue/10 hover:border-accent-blue/30 hover:shadow-2xl hover:shadow-accent-blue/5 hover:-translate-y-1 transition-all duration-300 ease-in-out overflow-hidden group">
         <CardContent className="p-0">
           <div className="flex flex-col md:flex-row">
             <div className="p-6 flex-1">
