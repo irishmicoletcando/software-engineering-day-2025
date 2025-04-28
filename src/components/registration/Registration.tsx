@@ -10,7 +10,7 @@ import StudentForm from './StudentForm';
 import SeminarSelection from './SeminarSelection';
 import ConfirmationScreen from './ConfirmationScreen';
 import SectionHeading from '../common/SectionHeading';
-import { fetchSeminars, registerStudent, checkStudentExists } from '../../lib/api';
+// import { fetchSeminars, registerStudent, checkStudentExists } from '../../lib/api';
 
 const Registration: React.FC = () => {
   const [seminars, setSeminars] = useState<Seminar[]>([]);
@@ -31,21 +31,21 @@ const Registration: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
   
-  useEffect(() => {
-    async function loadSeminars() {
-      try {
-        const data = await fetchSeminars();
-        setSeminars(data);
-      } catch (err) {
-        setError('Failed to load seminars. Please refresh the page.');
-        console.error('Error loading seminars:', err);
-      } finally {
-        setIsLoading(false);
-      }
-    }
+  // useEffect(() => {
+  //   async function loadSeminars() {
+  //     try {
+  //       const data = await fetchSeminars();
+  //       setSeminars(data);
+  //     } catch (err) {
+  //       setError('Failed to load seminars. Please refresh the page.');
+  //       console.error('Error loading seminars:', err);
+  //     } finally {
+  //       setIsLoading(false);
+  //     }
+  //   }
     
-    loadSeminars();
-  }, []);
+  //   loadSeminars();
+  // }, []);
   
   useEffect(() => {
     if (selectedSeminars.length > 0 && seminars.length > 0) {
@@ -84,45 +84,45 @@ const Registration: React.FC = () => {
     });
   };
   
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
     
-    if (selectedSeminars.length === 0) {
-      toast.error("Please select at least one seminar to register for.");
-      return;
-    }
+  //   if (selectedSeminars.length === 0) {
+  //     toast.error("Please select at least one seminar to register for.");
+  //     return;
+  //   }
     
-    setIsSubmitting(true);
+  //   setIsSubmitting(true);
     
-    try {
-      // Check if student already exists
-      const exists = await checkStudentExists(formData.studentNumber, formData.email);
-      if (exists) {
-        toast.error("A student with this student number or email is already registered.");
-        setIsSubmitting(false);
-        return;
-      }
+  //   try {
+  //     // Check if student already exists
+  //     const exists = await checkStudentExists(formData.studentNumber, formData.email);
+  //     if (exists) {
+  //       toast.error("A student with this student number or email is already registered.");
+  //       setIsSubmitting(false);
+  //       return;
+  //     }
       
-      // Prepare student data with seminars
-      const studentData: Student = {
-        ...formData,
-        seminars: selectedSeminars,
-        createdAt: new Date().toISOString()
-      };
+  //     // Prepare student data with seminars
+  //     const studentData: Student = {
+  //       ...formData,
+  //       seminars: selectedSeminars,
+  //       createdAt: new Date().toISOString()
+  //     };
       
-      // Register student
-      await registerStudent(studentData);
+  //     // Register student
+  //     await registerStudent(studentData);
       
-      setSubmitted(true);
-      toast.success("You have been registered for the selected seminars.", {
-        duration: 5000,
-      });
-    } catch (err) {
-      toast.error("There was an error processing your registration. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  //     setSubmitted(true);
+  //     toast.success("You have been registered for the selected seminars.", {
+  //       duration: 5000,
+  //     });
+  //   } catch (err) {
+  //     toast.error("There was an error processing your registration. Please try again.");
+  //   } finally {
+  //     setIsSubmitting(false);
+  //   }
+  // };
   
   if (isLoading) {
     return (
@@ -177,7 +177,7 @@ const Registration: React.FC = () => {
       </div>
 
       <div className="max-w-4xl mx-auto">
-          <form onSubmit={handleSubmit}>
+          <form>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <Card className="bg-event-dark border border-event-blue/20 h-full">
