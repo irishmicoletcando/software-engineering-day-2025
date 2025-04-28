@@ -26,9 +26,9 @@ const Registration: React.FC = () => {
     yearLevel: '',
     section: '',
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  // const [isSubmitting, setIsSubmitting] = useState(false);
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [error, setError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
   
   // useEffect(() => {
@@ -124,36 +124,36 @@ const Registration: React.FC = () => {
   //   }
   // };
   
-  if (isLoading) {
-    return (
-      <section id="registration" className="py-24 bg-event-dark relative">
-        <div className="container mx-auto px-4 text-center">
-          <Loader2 className="h-8 w-8 animate-spin mx-auto text-event-blue" />
-          <p className="text-white mt-4">Loading registration form...</p>
-        </div>
-      </section>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <section id="registration" className="py-24 bg-event-dark relative">
+  //       <div className="container mx-auto px-4 text-center">
+  //         <Loader2 className="h-8 w-8 animate-spin mx-auto text-event-blue" />
+  //         <p className="text-white mt-4">Loading registration form...</p>
+  //       </div>
+  //     </section>
+  //   );
+  // }
   
-  if (error) {
-    return (
-      <section id="registration" className="py-24 bg-event-dark relative">
-        <div className="container mx-auto px-4 text-center">
-          <div className="text-red-500 flex items-center justify-center gap-2 mb-4">
-            <AlertCircle className="h-6 w-6" />
-            <h3 className="text-xl font-bold">Error</h3>
-          </div>
-          <p className="text-white">{error}</p>
-          <Button 
-            className="bg-event-blue hover:bg-event-blue-dark text-white mt-6"
-            onClick={() => window.location.reload()}
-          >
-            Refresh Page
-          </Button>
-        </div>
-      </section>
-    );
-  }
+  // if (error) {
+  //   return (
+  //     <section id="registration" className="py-24 bg-event-dark relative">
+  //       <div className="container mx-auto px-4 text-center">
+  //         <div className="text-red-500 flex items-center justify-center gap-2 mb-4">
+  //           <AlertCircle className="h-6 w-6" />
+  //           <h3 className="text-xl font-bold">Error</h3>
+  //         </div>
+  //         <p className="text-white">{error}</p>
+  //         <Button 
+  //           className="bg-event-blue hover:bg-event-blue-dark text-white mt-6"
+  //           onClick={() => window.location.reload()}
+  //         >
+  //           Refresh Page
+  //         </Button>
+  //       </div>
+  //     </section>
+  //   );
+  // }
   
   if (submitted) {
     return (
@@ -208,16 +208,16 @@ const Registration: React.FC = () => {
               <Button 
                 type="submit" 
                 className="bg-event-blue hover:bg-event-blue-dark text-white px-8 py-6 h-auto text-lg"
-                disabled={isSubmitting}
+                // disabled={isSubmitting}
               >
-                {isSubmitting ? (
+                {/* {isSubmitting ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                     Processing...
                   </>
                 ) : (
                   'Complete Registration'
-                )}
+                )} */}
               </Button>
             </div>
           </form>
