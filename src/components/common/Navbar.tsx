@@ -11,10 +11,13 @@ const Navbar: React.FC = () => {
       <nav className='flex justify-between items-center w-full px-8 md:px-14 py-5'>
         <div className='flex justify-between items-center w-full'>
           {/* Logo */}
-          <p className="text-2xl font-bold">
-            {`</`}<span className='text-accent-blue'>SED</span>{`2025>`}
-          </p>
-          
+          <div className='flex items-center'>
+            <img src="/favicon.png" alt="SED 2025 Logo" className="w-8 h-8" />
+            <p className="hidden md:block ml-4 text-2xl font-bold">
+              {`</`}<span className='text-accent-blue'>SED</span>{`2025>`}
+            </p>
+          </div>
+
           {/* Desktop Navigation Menu */}
           <div className="hidden md:flex flex-row justify-between gap-8">
             <ScrollLink 
