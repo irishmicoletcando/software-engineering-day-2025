@@ -84,27 +84,4 @@ const ScrollLink: React.FC<{ to: string; className?: string; children: React.Rea
   );
 };
 
-const MobileScrollLink: React.FC<{ to: string; onClick: () => void; children: React.ReactNode }> = ({ to, onClick, children }) => {
-  const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    onClick();
-    const element = document.getElementById(to);
-    if (element) {
-      setTimeout(() => {
-        window.scrollTo({
-          top: element.offsetTop - 80,
-          behavior: 'smooth'
-        });
-      }, 100);
-    }
-  };
-
-  return (
-    <a href={`#${to}`} onClick={handleClick} className="hover:text-white text-center transition-colors duration-300">
-      {children}
-    </a>
-  );
-};
-
-
 export default Hero;
