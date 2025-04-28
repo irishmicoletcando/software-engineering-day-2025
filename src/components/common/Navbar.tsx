@@ -1,7 +1,7 @@
 'use client'
+
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react';
-import Link from 'next/link';
 
 const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -27,19 +27,19 @@ const Navbar: React.FC = () => {
               Speakers
             </ScrollLink>
             <ScrollLink 
-              to="/" 
+              to="schedule" 
               className="hover:text-light-blue transition-colors duration-300"
             >
               Schedule
             </ScrollLink>
             <ScrollLink 
-              to="/" 
+              to="registration" 
               className="hover:text-light-blue transition-colors duration-300"
             >
               Registration
             </ScrollLink>
             <ScrollLink 
-              to="/" 
+              to="merchandise" 
               className="hover:text-light-blue transition-colors duration-300"
             >
               Merchandise
@@ -67,19 +67,19 @@ const Navbar: React.FC = () => {
               Speakers
             </MobileScrollLink>
             <MobileScrollLink 
-              to="/" 
+              to="schedule" 
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Schedule
             </MobileScrollLink>
             <MobileScrollLink 
-              to="/" 
+              to="registration" 
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Registration
             </MobileScrollLink>
             <MobileScrollLink 
-              to="/" 
+              to="merchandise" 
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Merchandise
