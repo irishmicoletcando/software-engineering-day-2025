@@ -31,12 +31,13 @@ const Hero: React.FC = () => {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button
+            <ScrollLink
+              to="registration"
               className="bg-gradient-to-r from-dark-blue to-accent-blue hover:from-dark-blue hover:to-default-blue text-white px-6 py-3 text-sm md:text-md rounded-full shadow-lg transform transition-transform hover:scale-105 flex items-center group"
             >
               Register Now
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
-            </button>
+            </ScrollLink>
 
             <button
               className="border border-light-blue text-white hover:bg-dark-blue hover:text-white px-6 py-3 text-sm md:text-md rounded-full shadow-lg transform transition-transform hover:scale-105"
@@ -63,5 +64,47 @@ const Hero: React.FC = () => {
     </div>
   );
 };
+
+const ScrollLink: React.FC<{ to: string; className?: string; children: React.ReactNode }> = ({ to, className, children }) => {
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const element = document.getElementById(to);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 80,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  return (
+    <a href={`#${to}`} onClick={handleClick} className={className}>
+      {children}
+    </a>
+  );
+};
+
+const MobileScrollLink: React.FC<{ to: string; onClick: () => void; children: React.ReactNode }> = ({ to, onClick, children }) => {
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    onClick();
+    const element = document.getElementById(to);
+    if (element) {
+      setTimeout(() => {
+        window.scrollTo({
+          top: element.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }, 100);
+    }
+  };
+
+  return (
+    <a href={`#${to}`} onClick={handleClick} className="hover:text-white text-center transition-colors duration-300">
+      {children}
+    </a>
+  );
+};
+
 
 export default Hero;
