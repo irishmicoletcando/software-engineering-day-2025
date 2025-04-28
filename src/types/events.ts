@@ -1,3 +1,17 @@
+export interface Student {
+  id?: string;
+  surname: string;
+  firstName: string;
+  middleInitial: string;
+  email: string;
+  studentNumber: string;
+  pupWebmail: string;
+  yearLevel: string;
+  section: string;
+  seminars: string[];
+  createdAt?: string;
+}
+
 export interface Speaker {
   id: string;
   name: string;
@@ -19,4 +33,5 @@ export interface Seminar {
   duration: number;
   topics: string[];
   speakerId: string;
+  registered?: number;
 }
