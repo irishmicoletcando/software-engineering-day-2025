@@ -3,8 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Toaster, toast } from "sonner";
-import { Loader2, AlertCircle } from 'lucide-react';
+import { Toaster } from "sonner";
 import { Student, Seminar } from '@/types/events';
 import StudentForm from './StudentForm';
 import SeminarSelection from './SeminarSelection';
@@ -13,7 +12,7 @@ import SectionHeading from '../common/SectionHeading';
 // import { fetchSeminars, registerStudent, checkStudentExists } from '../../lib/api';
 
 const Registration: React.FC = () => {
-  const [seminars, setSeminars] = useState<Seminar[]>([]);
+  // const [seminars, setSeminars] = useState<Seminar[]>([]);
   const [selectedSeminars, setSelectedSeminars] = useState<string[]>([]);
   const [selectedSeminarDetails, setSelectedSeminarDetails] = useState<Seminar[]>([]);
   const [formData, setFormData] = useState<Omit<Student, 'seminars' | 'id' | 'createdAt'>>({
@@ -47,14 +46,14 @@ const Registration: React.FC = () => {
   //   loadSeminars();
   // }, []);
   
-  useEffect(() => {
-    if (selectedSeminars.length > 0 && seminars.length > 0) {
-      const details = seminars.filter(seminar => selectedSeminars.includes(seminar.id));
-      setSelectedSeminarDetails(details);
-    } else {
-      setSelectedSeminarDetails([]);
-    }
-  }, [selectedSeminars, seminars]);
+  // useEffect(() => {
+  //   if (selectedSeminars.length > 0 && seminars.length > 0) {
+  //     const details = seminars.filter(seminar => selectedSeminars.includes(seminar.id));
+  //     setSelectedSeminarDetails(details);
+  //   } else {
+  //     setSelectedSeminarDetails([]);
+  //   }
+  // }, [selectedSeminars, seminars]);
   
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
