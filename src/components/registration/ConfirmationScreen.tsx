@@ -1,4 +1,3 @@
-// src/components/Registration/ConfirmationScreen.tsx
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Check } from 'lucide-react';
@@ -29,7 +28,7 @@ const ConfirmationScreen: React.FC<ConfirmationScreenProps> = ({
               </div>
               <h2 className="text-2xl font-bold text-white mb-2">Registration Complete!</h2>
               <p className="text-gray-300 mb-6">
-                Thank you for registering, {fullName}! You'll receive a confirmation email at {studentData.email} with details about the seminars.
+                Thank you for registering, {fullName}! You&apos;ll receive a confirmation email at {studentData.email} with details about the seminars.
               </p>
               <div className="mb-8 border border-event-blue/10 rounded-lg p-4 bg-event-blue/5">
                 <h3 className="text-lg font-medium text-white mb-3">Your selected seminars:</h3>
