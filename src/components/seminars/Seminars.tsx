@@ -32,7 +32,7 @@ const Seminars: React.FC = () => {
   const speaker = selected ? getSpeakerBySeminar(selected.id) : null;
 
   return (
-    <section id="schedule" className="bg-darkest-blue py-24 px-8 md:px-14">
+    <section id="schedule" className="bg-darkest-blue pt-24 px-8 md:px-14">
       <div className="container mx-auto z-10">
         <SectionHeading
           subtitle="Event Program"
