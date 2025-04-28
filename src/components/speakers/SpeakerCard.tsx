@@ -40,7 +40,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index, onViewProfile
               <Badge
                 key={idx}
                 variant="outline"
-                className="border-default-blue/30 text-default-blue hover:bg-default-blue/10 transition-colors"
+                className="border-shining-yellow/30 text-shining-yellow hover:bg-shining-yellow/10 transition-colors"
               >
                 {topic}
               </Badge>
