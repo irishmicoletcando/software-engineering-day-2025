@@ -32,12 +32,12 @@ const Navbar: React.FC = () => {
             >
               Schedule
             </ScrollLink>
-            <ScrollLink 
+            {/* <ScrollLink 
               to="registration" 
               className="hover:text-light-blue transition-colors duration-300"
             >
               Registration
-            </ScrollLink>
+            </ScrollLink> */}
             <ScrollLink 
               to="merchandise" 
               className="hover:text-light-blue transition-colors duration-300"
@@ -72,12 +72,12 @@ const Navbar: React.FC = () => {
             >
               Schedule
             </MobileScrollLink>
-            <MobileScrollLink 
+            {/* <MobileScrollLink 
               to="registration" 
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Registration
-            </MobileScrollLink>
+            </MobileScrollLink> */}
             <MobileScrollLink 
               to="merchandise" 
               onClick={() => setIsMobileMenuOpen(false)}
