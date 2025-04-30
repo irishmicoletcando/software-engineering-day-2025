@@ -25,6 +25,7 @@ const Navbar: React.FC = () => {
       setIsScrolled(window.scrollY > 20)
     }
     window.addEventListener('scroll', handleScroll)
+    handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -32,7 +33,8 @@ const Navbar: React.FC = () => {
     <div className="fixed w-full z-50">
       <nav className={`
         w-full transition-all duration-300
-        ${isScrolled ? 'bg-darkest-blue/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}
+        ${isScrolled || isMobileMenuOpen ? 'bg-darkest-blue shadow-lg' : 'bg-transparent'}
+        ${isMobileMenuOpen ? 'bg-opacity-100' : isScrolled ? 'bg-opacity-95 backdrop-blur-md' : ''}
       `}>
         <div className='flex justify-between items-center w-full px-8 md:px-14 py-5'>
           {/* Logo */}
@@ -105,8 +107,11 @@ const Navbar: React.FC = () => {
       
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-darkest-blue/95 backdrop-blur-md flex flex-col items-center py-8 shadow-lg">
-          <div className="flex flex-col gap-6 w-full px-8">
+        <div 
+          className="fixed inset-0 text-center bg-darkest-blue"
+          style={{ marginTop: "72px" }}
+        >
+          <div className="flex flex-col gap-6 w-full px-8 pt-8">
             <MobileScrollLink 
               to="speakers" 
               onClick={() => setIsMobileMenuOpen(false)}
@@ -127,7 +132,10 @@ const Navbar: React.FC = () => {
                   <ChevronDown size={16} className="group-hover:rotate-180 transition-transform duration-300" />
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-darkest-blue border border-default-blue/20 mt-2 w-[calc(100vw-4rem)]">
+              <DropdownMenuContent 
+                className="bg-darkest-blue/95 backdrop-blur-md border border-default-blue/20 mt-2 w-[calc(100vw-4rem)]"
+                sideOffset={5}
+              >
                 {Object.entries(REGISTRATION_URLS).map(([date, url]) => (
                   <DropdownMenuItem key={date} asChild>
                     <a
@@ -169,7 +177,12 @@ const ScrollLink: React.FC<{ to: string; className?: string; children: React.Rea
   );
 };
 
-const MobileScrollLink: React.FC<{ to: string; onClick: () => void; children: React.ReactNode }> = ({ to, onClick, children }) => {
+const MobileScrollLink: React.FC<{ 
+  to: string; 
+  onClick: () => void; 
+  className?: string;
+  children: React.ReactNode 
+}> = ({ to, onClick, className, children }) => {
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     onClick();
@@ -185,7 +198,11 @@ const MobileScrollLink: React.FC<{ to: string; onClick: () => void; children: Re
   };
 
   return (
-    <a href={`#${to}`} onClick={handleClick} className="hover:text-white text-center transition-colors duration-300">
+    <a 
+      href={`#${to}`} 
+      onClick={handleClick} 
+      className={className}
+    >
       {children}
     </a>
   );
