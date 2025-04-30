@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
             </div>
             <div className="flex items-center gap-3 text-light-gray justify-center">
               <MapPin className="text-accent-blue" size={22} />
-              <span className="text-md md:text-lg">PUP CEA AVR - 4th Floor</span>
+              <span className="text-md md:text-lg">PUP AVR 4th Floor - CEA Building</span>
             </div>
           </div>
         </motion.div>
