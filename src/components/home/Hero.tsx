@@ -4,8 +4,12 @@ import { motion } from 'framer-motion';
 import { CalendarDays, MapPin, ArrowRight } from 'lucide-react';
 import DataVisBackground from '@/components/home/DataVisBackground';
 import Image from 'next/image';
+import { useState } from 'react';
+import RegistrationModal from '@/components/common/RegistrationModal';
 
 const Hero: React.FC = () => {
+  const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
+
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-darkest-blue">
       {/* Radial dark background gradient overlay */}
@@ -104,13 +108,13 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <ScrollLink
-              to="registration"
+            <button
+              onClick={() => setIsRegistrationOpen(true)}
               className="bg-gradient-to-r from-dark-blue to-accent-blue hover:from-dark-blue hover:to-default-blue text-white px-8 py-3 text-sm md:text-base rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 flex items-center group"
             >
               Register Now
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
-            </ScrollLink>
+            </button>
             
             <ScrollLink
               to="schedule"
@@ -138,6 +142,12 @@ const Hero: React.FC = () => {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Registration Modal */}
+      <RegistrationModal
+        isOpen={isRegistrationOpen}
+        onClose={() => setIsRegistrationOpen(false)}
+      />
 
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-darkest-blue to-transparent"></div>
     </div>
