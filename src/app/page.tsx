@@ -1,3 +1,4 @@
+import Footer from "@/components/common/Footer"
 import Navbar from "@/components/common/Navbar"
 import Hero from "@/components/home/Hero"
 import Seminars from "@/components/seminars/Seminars"
@@ -10,6 +11,7 @@ const HomePage = () => {
       <Hero />
       <Speakers />
       <Seminars />
+      <Footer />
     </main>
   )
 }
