@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
                 SPARK
               </div>
 
-{/* Updated meaning text */}
+              {/* SPARK meaning */}
               <p className="text-lg md:text-xl lg:text-2xl font-light tracking-[0.15em] text-light-gray/90 max-w-3xl mx-auto leading-relaxed">
                 <motion.span
                   initial={{ opacity: 0 }}
