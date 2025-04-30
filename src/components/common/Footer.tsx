@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
               height={64}
               className="animate-pulse-slow"
             />
-            <h2 className="text-2xl font-bold text-white">
+            <h2 className="text-2xl font-bold text-center text-white">
               Software Engineering Day 
               <span className="text-accent-blue"> 2025</span>
             </h2>
