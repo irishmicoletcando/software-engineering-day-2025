@@ -1,24 +1,10 @@
-export interface Student {
-  id?: string;
-  surname: string;
-  firstName: string;
-  middleInitial: string;
-  email: string;
-  studentNumber: string;
-  pupWebmail: string;
-  yearLevel: string;
-  section: string;
-  seminars: string[];
-  createdAt?: string;
-}
-
 export interface Speaker {
   id: string;
   name: string;
   role: string;
   company: string;
   bio: string;
-  image: string;
+  image?: string;
   linkedin: string;
   topics?: string[];
   schedule?: string;
