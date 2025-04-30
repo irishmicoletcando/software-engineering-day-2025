@@ -16,15 +16,15 @@ const Hero: React.FC = () => {
       
       <DataVisBackground className="z-[1]" />
 
-      <div className="container mx-auto px-6 py-12 relative z-10">
+      <div className="container mx-auto px-6 relative z-10 flex items-center justify-center min-h-screen">
         <motion.div
-          className="flex flex-col items-center justify-center min-h-[calc(100vh-24rem)]"
+          className="flex flex-col items-center justify-center w-full"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           {/* Main content */}
-          <div className="space-y-8 text-center mb-16">
+          <div className="space-y-12 text-center max-w-5xl mx-auto">
             {/* Title Section */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -48,21 +48,29 @@ const Hero: React.FC = () => {
                 SPARK
               </div>
 
-              <p className="text-sm md:text-base font-light tracking-[0.15em] text-light-gray max-w-lg mx-auto">
-                <span className="text-accent-blue">S</span>HAPING 
-                <span className="text-accent-blue"> P</span>ROGRESS 
-                <span className="text-accent-blue"> A</span>ND 
-                <span className="text-accent-blue"> R</span>EVOLUTIONIZING 
-                <span className="text-accent-blue"> K</span>NOWLEDGE
+{/* Updated meaning text */}
+              <p className="text-lg md:text-xl lg:text-2xl font-light tracking-[0.15em] text-light-gray/90 max-w-3xl mx-auto leading-relaxed">
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.6, duration: 0.5 }}
+                  className="relative inline-block"
+                >
+                  <span className="text-accent-blue text-glow">S</span>HAPING{' '} 
+                <span className="text-accent-blue text-glow">P</span>ROGRESS{' '} 
+                <span className="text-accent-blue text-glow">A</span>ND{' '} 
+                <span className="text-accent-blue text-glow">R</span>EVOLUTIONIZING{' '} 
+                <span className="text-accent-blue text-glow">K</span>NOWLEDGE
+</motion.span>
               </p>
             </motion.div>
           </div>
 
           {/* Buttons */}
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center my-16"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+  animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <ScrollLink
