@@ -38,12 +38,13 @@ const Hero: React.FC = () => {
               Register Now
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
             </ScrollLink>
-
-            <button
+            
+            <ScrollLink
+              to="schedule"
               className="border border-light-blue text-white hover:bg-dark-blue hover:text-white px-6 py-3 text-sm md:text-md rounded-full shadow-lg transform transition-transform hover:scale-105"
             >
               View Schedule
-            </button>
+            </ScrollLink>
           </div>
 
           {/* Event Details */}
