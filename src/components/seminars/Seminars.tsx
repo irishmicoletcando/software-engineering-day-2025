@@ -122,29 +122,36 @@ const Seminars: React.FC = () => {
           ))}
         </Tabs>
       </div>
-
+          
+      {/* Seminar Detail Dialog */}
       <Dialog open={!!selectedSeminar} onOpenChange={(open) => !open && setSelectedSeminar(null)}>
-        <DialogContent className="bg-darkest-blue border border-default-blue/20 text-white w-full max-w-3xl mx-auto p-6 rounded-xl shadow-lg overflow-auto max-h-[80vh] fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <DialogContent className="bg-darkest-blue/95 backdrop-blur-md border border-default-blue/20 text-white w-[95%] max-w-3xl max-h-[90vh] overflow-y-auto p-4 sm:p-6 mx-auto">
           {selected && (
             <>
-              <DialogHeader className="mb-3">
-                <div className="flex items-center gap-2 text-accent-blue mb-1">
-                  <Calendar className="h-4 w-4" />
-                  <span className="text-sm font-medium">
+              <DialogHeader className="space-y-4">
+                {/* Date and Time */}
+                <div className="flex items-center gap-2 text-accent-blue">
+                  <Calendar className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <span className="text-sm sm:text-base font-medium">
                     {selected.date} · {selected.time} · {selected.duration} minutes
                   </span>
                 </div>
-                <DialogTitle className="text-xl font-bold text-white mb-1">
+
+                {/* Title */}
+                <DialogTitle className="text-xl sm:text-2xl font-bold text-white">
                   {selected.title}
                 </DialogTitle>
-                <DialogDescription className="text-gray-300 text-sm">
+
+                {/* Description */}
+                <DialogDescription className="text-gray-300 text-sm sm:text-base leading-relaxed">
                   {selected.description}
                 </DialogDescription>
               </DialogHeader>
-              
-              <div className="space-y-4">
-                <div>
-                  <h4 className="text-md font-medium mb-2 text-white border-b border-default-blue/20 pb-1">
+                    
+              <div className="mt-6 space-y-6">
+                {/* Topics Section */}
+                <div className="space-y-3">
+                  <h4 className="text-base sm:text-lg font-medium text-white border-b border-default-blue/20 pb-2">
                     Topics
                   </h4>
                   <div className="flex flex-wrap gap-2">
@@ -152,51 +159,59 @@ const Seminars: React.FC = () => {
                       <Badge 
                         key={idx}
                         variant="outline"
-                        className="border-shining-yellow/30 text-shining-yellow px-2 py-0.5 text-xs"
+                        className="border-shining-yellow/30 text-shining-yellow px-3 py-1 text-xs sm:text-sm"
                       >
                         {topic}
                       </Badge>
                     ))}
                   </div>
                 </div>
-                
+                      
+                {/* Speaker Section */}
                 {speaker && (
-                  <div>
-                    <h4 className="text-md font-medium mb-2 text-white border-b border-default-blue/20 pb-1">
+                  <div className="space-y-3">
+                    <h4 className="text-base sm:text-lg font-medium text-white border-b border-default-blue/20 pb-2">
                       Speaker
                     </h4>
-                    <div className="p-3 rounded-lg bg-darkest-blue/10 border border-default-blue/20 hover:border-accent-blue/40 transition-colors">
-                      <div className="flex items-center gap-3 mb-2">
-                        <Avatar className="h-12 w-12 border-2 border-blue-500/50 ring-2 ring-blue-500/10">
+                    <div className="p-4 rounded-lg bg-default-blue/5 border border-default-blue/20 hover:border-accent-blue/40 transition-colors duration-300">
+                      <div className="flex items-start gap-4 mb-3">
+                        <Avatar className="h-14 w-14 sm:h-16 sm:w-16 border-2 border-accent-blue/50 ring-2 ring-accent-blue/10">
                           <AvatarImage src={speaker.image} alt={speaker.name} />
-                          <AvatarFallback className="bg-blue-900 text-blue-100">
+                          <AvatarFallback className="bg-default-blue text-white text-lg">
                             {speaker.name.charAt(0)}
                           </AvatarFallback>
                         </Avatar>
                         <div>
-                          <p className="text-white font-medium text-base">{speaker.name}</p>
-                          <p className="text-blue-400 text-xs">
+                          <p className="text-white font-medium text-base sm:text-lg">
+                            {speaker.name}
+                          </p>
+                          <p className="text-accent-blue text-sm">
                             {speaker.role} at {speaker.company}
                           </p>
                         </div>
                       </div>
-                      <p className="text-gray-300 text-xs leading-relaxed line-clamp-2">
+                      <p className="text-gray-300 text-sm leading-relaxed">
                         {speaker.bio}
                       </p>
                     </div>
                   </div>
                 )}
               </div>
-              
-              <DialogFooter className="mt-6">
+                    
+              {/* Footer */}
+              <DialogFooter className="mt-8 pt-4 border-t border-default-blue/20">
                 <Button 
-                  className="bg-default-blue hover:bg-default-blue-dark text-white w-full sm:w-auto flex items-center gap-2"
                   onClick={() => {
                     setSelectedSeminar(null);
                     openDayRegistrationForm(selected.date);
                   }}
+                  className="w-full sm:w-auto bg-gradient-to-r from-default-blue to-accent-blue hover:from-dark-blue hover:to-default-blue text-white px-6 py-3 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group"
                 >
-                  Register for this Seminar <ExternalLink size={16} />
+                  Register for this Seminar
+                  <ExternalLink 
+                    size={18} 
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
                 </Button>
               </DialogFooter>
             </>
