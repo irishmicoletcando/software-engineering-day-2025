@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
             <img 
               src="/favicon.png" 
               alt="SED 2025 Logo" 
-              className="w-8 h-8 group-hover:rotate-12 transition-transform duration-300" 
+              className="w-10 h-10 md:w-12 md:h-12 group-hover:rotate-12 transition-transform duration-300" 
             />
             <p className="hidden md:block ml-4 text-2xl font-bold">
               {`</`}<span className='text-accent-blue group-hover:text-shining-yellow transition-colors duration-300'>SED</span>{`2025>`}
