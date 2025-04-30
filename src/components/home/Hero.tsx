@@ -63,17 +63,21 @@ const Hero: React.FC = () => {
               </h1>
 
               {/* SPARK */}
-              <div 
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-[0.1em] md:tracking-[0.2em]"
-                style={{ 
-                  fontFamily: 'TR2N, sans-serif',
-                  color: '#FFD700',
-                  textShadow: '0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.5)',
-                  WebkitTextStroke: '1px #FFD700',
-                }}
+              <motion.div
+                className="relative"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8 }}
               >
-                SPARK
-              </div>
+                <div 
+                  className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-[0.1em] md:tracking-[0.2em] spark-text"
+                  style={{ 
+                    fontFamily: 'TR2N, sans-serif',
+                  }}
+                >
+                  SPARK
+                </div>
+              </motion.div>
 
               {/* SPARK meaning */}
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-light tracking-[0.1em] md:tracking-[0.15em] text-light-gray/90 max-w-3xl mx-auto leading-relaxed">
