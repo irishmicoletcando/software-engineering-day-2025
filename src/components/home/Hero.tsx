@@ -70,7 +70,7 @@ const Hero: React.FC = () => {
                 transition={{ duration: 0.8 }}
               >
                 <div 
-                  className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-[0.1em] md:tracking-[0.2em] spark-text"
+                  className="text-7xl lg:text-8xl xl:text-9xl font-black tracking-[0.1em] md:tracking-[0.2em] spark-text"
                   style={{ 
                     fontFamily: 'TR2N, sans-serif',
                   }}
