@@ -154,7 +154,7 @@ const Footer: React.FC = () => {
                     </h3>
                     <div className="grid grid-cols-3 gap-6 justify-items-center">
                       {[
-                        { name: 'ACCESS', type: 'jpg' },
+                        { name: 'ACCESS', type: 'png' },
                         { name: 'MRSP', type: 'png' },
                         { name: 'CNCP', type: 'jpg' },
                         { name: 'PUPADS', type: 'jpg' },
