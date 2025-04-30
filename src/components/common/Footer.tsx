@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Mail } from 'lucide-react';
+import { Facebook, Instagram } from 'lucide-react';
 import { FaTiktok } from 'react-icons/fa';
 import Image from 'next/image';
 
