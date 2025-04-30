@@ -7,33 +7,67 @@ import DataVisBackground from '@/components/home/DataVisBackground';
 const Hero: React.FC = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-darkest-blue">
-      <DataVisBackground />
+      {/* Radial dark background gradient overlay */}
+      <div className="absolute inset-0 z-0" 
+        style={{
+          background: 'radial-gradient(circle at center, rgba(18, 24, 38, 0.7) 0%, #121826 100%)',
+        }}
+      />
+      
+      <DataVisBackground className="z-[1]" />
 
-      <div className="container mx-auto px-6 py-12 relative z-10 text-center">
+      <div className="container mx-auto px-6 py-12 relative z-10">
         <motion.div
-          className="space-y-10"
+          className="flex flex-col items-center justify-center min-h-[calc(100vh-24rem)]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          {/* Title */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
-            <span className="block text-white">{`<Software Engineering/>`}</span>
-            <span className="text-gradient bg-gradient-to-r from-accent-blue to-light-blue bg-clip-text text-transparent block">
-              Day 2025
-            </span>
-          </h1>
+          {/* Main content */}
+          <div className="space-y-8 text-center mb-16">
+            {/* Title Section */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h1 className="text-xl md:text-2xl text-white font-light tracking-[0.2em] mb-6">
+                7th SOFTWARE ENGINEERING DAY
+              </h1>
 
-          {/* Description */}
-          <p className="text-md md:text-lg text-light-gray max-w-xl mx-auto leading-relaxed">
-            Discover the latest in Big Data and Machine Learning with top industry experts.
-          </p>
+              {/* SPARK */}
+              <div 
+                className="text-7xl md:text-8xl lg:text-9xl font-black tracking-[0.2em] mb-6"
+                style={{ 
+                  fontFamily: 'TR2N, sans-serif',
+                  color: '#FFD700',
+                  textShadow: '0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.5)',
+                  WebkitTextStroke: '1px #FFD700',
+                }}
+              >
+                SPARK
+              </div>
+
+              <p className="text-sm md:text-base font-light tracking-[0.15em] text-light-gray max-w-lg mx-auto">
+                <span className="text-accent-blue">S</span>HAPING 
+                <span className="text-accent-blue"> P</span>ROGRESS 
+                <span className="text-accent-blue"> A</span>ND 
+                <span className="text-accent-blue"> R</span>EVOLUTIONIZING 
+                <span className="text-accent-blue"> K</span>NOWLEDGE
+              </p>
+            </motion.div>
+          </div>
 
           {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             <ScrollLink
               to="registration"
-              className="bg-gradient-to-r from-dark-blue to-accent-blue hover:from-dark-blue hover:to-default-blue text-white px-6 py-3 text-sm md:text-md rounded-full shadow-lg transform transition-transform hover:scale-105 flex items-center group"
+              className="bg-gradient-to-r from-dark-blue to-accent-blue hover:from-dark-blue hover:to-default-blue text-white px-8 py-3 text-sm md:text-base rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 flex items-center group"
             >
               Register Now
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
@@ -41,23 +75,28 @@ const Hero: React.FC = () => {
             
             <ScrollLink
               to="schedule"
-              className="border border-light-blue text-white hover:bg-dark-blue hover:text-white px-6 py-3 text-sm md:text-md rounded-full shadow-lg transform transition-transform hover:scale-105"
+              className="border border-light-blue text-white hover:bg-dark-blue/20 px-8 py-3 text-sm md:text-base rounded-full shadow-lg transform transition-all duration-300 hover:scale-105"
             >
               View Schedule
             </ScrollLink>
-          </div>
+          </motion.div>
 
           {/* Event Details */}
-          <div className="flex flex-col sm:flex-row gap-6 pt-10 justify-center items-center mx-auto">
-            <div className="flex items-center gap-3 text-light-gray justify-center">
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <div className="flex items-center gap-3 text-light-gray">
               <CalendarDays className="text-accent-blue" size={22} />
-              <span className="text-md md:text-lg">May 5, 6, 8, 2025</span>
+              <span className="text-md md:text-lg">May 5, 6, and 8, 2025</span>
             </div>
-            <div className="flex items-center gap-3 text-light-gray justify-center">
+            <div className="flex items-center gap-3 text-light-gray">
               <MapPin className="text-accent-blue" size={22} />
               <span className="text-md md:text-lg">PUP AVR 4th Floor - CEA Building</span>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
 

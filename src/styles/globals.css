@@ -2,6 +2,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: TR2N;
+  src: url('/fonts/tr2n.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --color-darkest-blue: #121826;
   --color-dark-blue: #005A8C;
@@ -13,6 +21,7 @@
   --color-default-gray: #4A5568;
   --color-dark-gray: #2D3748;
   --color-shining-yellow: #FFD700;
+  --font-sans: 'TR2N', sans-serif;
 }
 
 @theme inline {
@@ -129,4 +138,22 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Partner logo animations */
+.partner-logo {
+  @apply opacity-70 transition-all duration-300;
+}
+
+.partner-logo:hover {
+  @apply opacity-100 scale-110;
+}
+
+/* Partner section transitions */
+.partner-section {
+  @apply transition-all duration-300;
+}
+
+.partner-section:hover .partner-heading {
+  @apply text-accent-blue;
 }

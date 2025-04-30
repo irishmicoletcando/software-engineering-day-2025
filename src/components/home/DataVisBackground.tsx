@@ -21,11 +21,10 @@ const DataVisBackground: React.FC<DataVisBackgroundProps> = ({ className }) => {
 
   return (
     <div className={`absolute inset-0 overflow-hidden ${className}`}>
-      <div className="absolute inset-0 bg-darkest-blue opacity-30" />
-
-      {/* Left Side Animations */}
+      <div className="absolute inset-0 bg-darkest-blue opacity-10" /> 
+      
       <motion.div
-        className="absolute w-[250px] h-[250px] top-20 -left-20 bg-gradient-to-br from-accent-blue to-transparent rounded-full blur-3xl"
+        className="absolute w-[250px] h-[250px] top-20 -left-20 bg-gradient-to-br from-accent-blue/50 to-transparent rounded-full blur-3xl"
         animate={{ y: [0, 30, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
       />
