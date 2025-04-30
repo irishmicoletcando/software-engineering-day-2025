@@ -47,12 +47,12 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Event Details */}
-          <div className="flex flex-col sm:flex-row gap-6 pt-10 justify-center">
-            <div className="flex items-center gap-3 text-light-gray">
+          <div className="flex flex-col sm:flex-row gap-6 pt-10 justify-center items-center mx-auto">
+            <div className="flex items-center gap-3 text-light-gray justify-center">
               <CalendarDays className="text-accent-blue" size={22} />
               <span className="text-md md:text-lg">May 5, 6, 8, 2025</span>
             </div>
-            <div className="flex items-center gap-3 text-light-gray">
+            <div className="flex items-center gap-3 text-light-gray justify-center">
               <MapPin className="text-accent-blue" size={22} />
               <span className="text-md md:text-lg">PUP CEA AVR - 4th Floor</span>
             </div>
