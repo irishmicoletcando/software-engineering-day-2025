@@ -204,3 +204,46 @@
     -webkit-text-stroke: 1px #FFD700;
   }
 }
+
+/* Responsive SPARK text styling */
+.spark-text {
+  color: #FFD700;
+}
+
+/* Base glow for mobile/tablet */
+@media (max-width: 767px) {
+  .spark-text {
+    text-shadow: 
+      0 0 2px rgba(255, 215, 0, 0.3),
+      0 0 4px rgba(255, 215, 0, 0.2);
+  }
+}
+
+/* Medium devices */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .spark-text {
+    text-shadow: 
+      0 0 4px rgba(255, 215, 0, 0.4),
+      0 0 8px rgba(255, 215, 0, 0.3);
+    -webkit-text-stroke: 0.5px #FFD700;
+  }
+}
+
+/* Desktop and larger */
+@media (min-width: 1024px) {
+  .spark-text {
+    text-shadow: 
+      0 0 8px rgba(255, 215, 0, 0.5),
+      0 0 16px rgba(255, 215, 0, 0.4);
+    -webkit-text-stroke: 1px #FFD700;
+  }
+}
+
+/* Reduce glow on devices with higher pixel density */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .spark-text {
+    text-shadow: 
+      0 0 2px rgba(255, 215, 0, 0.25),
+      0 0 4px rgba(255, 215, 0, 0.15);
+  }
+}
