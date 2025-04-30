@@ -16,7 +16,7 @@ const Speakers: React.FC = () => {
   const selected = selectedSpeaker ? speakers.find((speaker) => speaker.id === selectedSpeaker) : null;
 
   return (
-    <section id="speakers" className="bg-darkest-blue relative px-8 md:px-14">
+    <section id="speakers" className="bg-darkest-blue relative px-4 sm:px-8 md:px-14">
       {/* Background Animation */}
       <SpeakersBackground />
 
@@ -41,44 +41,49 @@ const Speakers: React.FC = () => {
 
       {/* Speaker Detail Dialog */}
       <Dialog open={!!selectedSpeaker} onOpenChange={(open) => !open && setSelectedSpeaker(null)}>
-        <DialogContent className="bg-darkest-blue border border-default-blue/20 text-white max-w-3xl">
+        <DialogContent className="bg-darkest-blue/95 backdrop-blur-md border border-default-blue/20 text-white w-[95%] max-w-3xl max-h-[90vh] overflow-y-auto p-4 sm:p-6 mx-auto">
           {selected && (
             <>
-              <DialogHeader>
-                <DialogTitle className="text-2xl font-bold flex items-center gap-4">
-                  {/* <Avatar className="w-12 h-12 border-2 border-default-blue">
-                    <AvatarImage src={selected.image} alt={selected.name} />
-                    <AvatarFallback className="bg-default-blue">{selected.name.charAt(0)}</AvatarFallback>
-                  </Avatar> */}
-                  <div>
-                    {selected.name}
-                    <p className="text-accent-blue text-sm font-normal mt-1">
+              <DialogHeader className="space-y-4">
+                <DialogTitle className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                  <div className="w-full">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white break-words">
+                      {selected.name}
+                    </h3>
+                    <p className="text-accent-blue text-sm sm:text-base font-normal mt-1">
                       {selected.role} at {selected.company}
                     </p>
                   </div>
                 </DialogTitle>
-                <DialogDescription className="text-gray-300 mt-4">{selected.bio}</DialogDescription>
+                <DialogDescription className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                  {selected.bio}
+                </DialogDescription>
               </DialogHeader>
 
-              <div className="mt-4">
-                <h4 className="text-lg font-medium mb-3">Expertise</h4>
-                <div className="flex flex-wrap gap-2 mb-6">
+              <div className="mt-6 space-y-4">
+                <h4 className="text-base sm:text-lg font-medium text-white">Expertise</h4>
+                <div className="flex flex-wrap gap-2">
                   {selected.topics?.map((topic, idx) => (
-                    <Badge key={idx} variant="outline" className="border-default-blue/30 text-default-blue">
+                    <Badge 
+                      key={idx} 
+                      variant="outline" 
+                      className="border-default-blue/30 text-default-blue text-xs sm:text-sm py-1 px-2"
+                    >
                       {topic}
                     </Badge>
                   ))}
                 </div>
 
-                <div className="flex gap-3 mt-6">
+                <div className="flex gap-3 mt-6 pt-4 border-t border-default-blue/20">
                   {selected.linkedin && (
                     <a
                       href={selected.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-2 rounded-full bg-shining-yellow/10 text-shining-yellow hover:bg-shining-yellow/20 transition-colors"
+                      aria-label={`Visit ${selected.name}'s LinkedIn profile`}
                     >
-                      <Linkedin size={18} />
+                      <Linkedin size={20} />
                     </a>
                   )}
                 </div>
