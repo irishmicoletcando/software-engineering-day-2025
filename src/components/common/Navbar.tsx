@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Menu, X, ChevronRight, ChevronDown, Calendar } from 'lucide-react';
+import { Menu, X, ChevronDown, Calendar } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
               </span>
               <span className="absolute inset-0 bg-default-blue/10 rounded-lg scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
             </ScrollLink>
-            {/* Replace the existing Register Now button with this */}
+
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button className="bg-default-blue hover:bg-default-blue/90 text-white px-5 py-2 rounded-lg transition-all duration-300 flex items-center gap-2 group">
