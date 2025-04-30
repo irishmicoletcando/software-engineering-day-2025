@@ -157,3 +157,16 @@
 .partner-section:hover .partner-heading {
   @apply text-accent-blue;
 }
+
+@keyframes logoPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(0, 194, 255, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(0, 194, 255, 0.4));
+  }
+}
+
+.logo-glow {
+  animation: logoPulse 3s ease-in-out infinite;
+}
