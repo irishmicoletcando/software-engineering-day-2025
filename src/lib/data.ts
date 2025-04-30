@@ -91,9 +91,9 @@ export const speakers: Speaker[] = [
   },
   {
     id: "speaker9",
-    name: "Speaker 9",
+    name: "Nicasio Nicklaus",
     role: "Chief Risk and Compliance Officer",
-    company: "PayMongo",
+    company: "Steamlabs",
     bio: "Josh Quinto is a degree holder of Doctor of Business Administration with 19 years of intensive experience in financial institutions and FinTechs. He currently serves as the Chief Risk and Compliance Officer at PayMongo and sits on the Board of Trustees of the Association of Remittance Compliance Officers. He is a Certified Risk Analyst (CRA®) accredited by the Global Academy of Finance and Management, and is also certified in Bank Risk Management by the Asian Institute of Chartered Bankers. Additionally, he holds a Six Sigma Green Belt certification from Six Sigma Philippines. He has held key roles in organizations such as Maya, Uploan PH, PNB, EastWest Bank, UniCapital Inc., and BPI, bringing a wealth of expertise in risk, compliance, and financial strategy.",
     image: "/assets/josh_quinto.jpg",
     linkedin: "https://www.linkedin.com/in/joshquinto",
@@ -146,7 +146,7 @@ export const seminars: Seminar[] = [
   },
   {
     id: "seminar4",
-    title: "Understanding AR: Fundamentals, Applications, and Trends",
+    title: "AiLearn to AiEarn: Master Skills, Create Profits",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     date: "May 6, 2025",
     time: "1:05 PM",
@@ -157,7 +157,7 @@ export const seminars: Seminar[] = [
   {
     id: "seminar5",
     title: "The Power of Connection: Exploring the Salesforce World",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    description: "Offers students an engaging introduction to Salesforce, the world's leading cloud-based platform for managing customer relationships. We'll delve into how Salesforce empowers businesses to connect with their customers in meaningful ways, streamline sales and marketing efforts, and gain valuable insights. Discover the vast ecosystem of Salesforce tools and learn how understanding this platform can open doors to exciting career opportunities in today's interconnected business landscape.",
     date: "May 6, 2025",
     time: "2:20 PM",
     duration: 50,
@@ -167,7 +167,7 @@ export const seminars: Seminar[] = [
   {
     id: "seminar6",
     title: "The SAP Advantage: Streamlining Your Business Operations",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    description: "Offers students a clear and accessible introduction to SAP, a leading enterprise software used by organizations worldwide. We'll demystify the complexities of SAP, revealing how its integrated systems manage crucial business functions and drive efficiency across industries. Discover the fundamental concepts behind enterprise resource planning (ERP) and gain insights into how SAP powers global operations, making it a vital skill for future business professionals.",
     date: "May 6, 2025",
     time: "3:35 PM",
     duration: 50,
@@ -177,7 +177,7 @@ export const seminars: Seminar[] = [
   {
     id: "seminar7",
     title: "Demystifying Artificial Intelligence: Guide to Understanding and Navigating the Age of AI",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    description: "It will provide clear and accessible introduction to the world of Artificial Intelligence. We cut through the hype and misconceptions, offering a foundational understanding of core AI concepts, real-world applications, and the current state of the technology. To gain a practical perspective on what AI truly is and what it can (and cannot) do, empowering you to navigate the AI landscape with clarity and informed insights.",
     date: "May 8, 2025",
     time: "9:35 AM",
     duration: 50,
@@ -187,7 +187,7 @@ export const seminars: Seminar[] = [
   {
     id: "seminar8",
     title: "From Pixels to Insights: Machine Learning for Image Processing and Analysis",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    description: "It will delve into the exciting world of using machine learning to extract valuable information from images. You'll learn how algorithms can be trained to understand visual data, enabling applications like image recognition, object detection, and more. This session will bridge the gap between raw image data and actionable insights, providing a foundational understanding of this rapidly evolving field.",
     date: "May 8, 2025",
     time: "10:50 AM",
     duration: 50,
@@ -197,11 +197,11 @@ export const seminars: Seminar[] = [
   {
     id: "seminar9",
     title: "Rise of the Machines: Exploring the World of Robotics",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    description: "Discover the building blocks of intelligent machines, from sensors to AI integration. Explore how robotics is transforming industries and dive into the future of robotics, including key challenges and emerging opportunities.",
     date: "May 8, 2025",
     time: "1:35 PM",
     duration: 50,
-    topics: ["Lorem", "ipsum", "dolor"],
+    topics: ["Robotics", "Artificial Intelligence", "Sensors"],
     speakerId: "speaker9",
   },
   {
