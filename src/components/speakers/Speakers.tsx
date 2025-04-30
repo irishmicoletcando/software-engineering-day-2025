@@ -76,7 +76,7 @@ const Speakers: React.FC = () => {
                       href={selected.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-default-blue/10 text-default-blue hover:bg-default-blue/20 transition-colors"
+                      className="p-2 rounded-full bg-shining-yellow/10 text-shining-yellow hover:bg-shining-yellow/20 transition-colors"
                     >
                       <Linkedin size={18} />
                     </a>
