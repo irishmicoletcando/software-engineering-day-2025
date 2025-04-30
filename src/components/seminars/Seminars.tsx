@@ -8,11 +8,20 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { seminars, getSpeakerBySeminar } from '@/lib/data';
-import { Calendar } from 'lucide-react';
+import { Calendar, ExternalLink } from 'lucide-react';
 import SeminarCard from './SeminarCard';
+import { motion } from 'framer-motion';
+
+// Google Form URLs for registration
+const REGISTRATION_FORM_URLS: Record<string, string> = {
+  "May 5, 2025": "https://forms.gle/rnyG7764FVhMuufc9",
+  "May 6, 2025": "https://forms.gle/X1cyqqq2nDkp4i7Q9",
+  "May 8, 2025": "https://forms.gle/QBtwLyo168NhVdFA7",
+};
 
 const Seminars: React.FC = () => {
   const [selectedSeminar, setSelectedSeminar] = useState<string | null>(null);
+
   // Group seminars by date
   const seminarsByDate = seminars.reduce((acc, seminar) => {
     if (!acc[seminar.date]) {
@@ -31,6 +40,18 @@ const Seminars: React.FC = () => {
   // Get speaker for selected seminar
   const speaker = selected ? getSpeakerBySeminar(selected.id) : null;
 
+  // Handle the registration form opening
+  const openDayRegistrationForm = (date: string) => {
+    const cleanDate = date.includes('-') ? date.split('-')[1].trim() : date;
+    const formUrl = REGISTRATION_FORM_URLS[cleanDate];
+    
+    if (formUrl) {
+      window.open(formUrl, '_blank', 'noopener,noreferrer');
+    } else {
+      console.error(`No registration form URL found for date: ${cleanDate}`);
+    }
+  };
+
   return (
     <section id="schedule" className="bg-darkest-blue pt-24 px-8 md:px-14">
       <div className="container mx-auto z-10">
@@ -42,7 +63,7 @@ const Seminars: React.FC = () => {
       </div>
 
       <div className="mb-8 flex flex-col md:flex-row justify-between gap-4">
-        <Tabs defaultValue={dates.length > 0 ? dates[0] : undefined} className="w-full">
+        <Tabs defaultValue={dates[0]} className="w-full">
           <TabsList className="bg-default-gray/20 border border-default-blue/20 overflow-x-auto flex h-10 items-center justify-start rounded-lg w-full">
             {dates.map(date => (
               <TabsTrigger
@@ -67,12 +88,41 @@ const Seminars: React.FC = () => {
                   />
                 ))}
               </div>
+
+              {/* Registration button */}
+              <motion.div 
+                className="mt-16 text-center pt-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ 
+                  duration: 0.5, 
+                  delay: seminarsByDate[date].length * 0.05 + 0.5
+                }}
+              >
+                <div className="max-w-2xl mx-auto">
+                  <h3 className="text-xl font-medium text-gray-400 mb-2">
+                    Ready to join?
+                  </h3>
+                  <h4 className="text-xl font-semibold text-white mb-6">
+                    Register for {date}
+                  </h4>
+                  <Button 
+                    onClick={() => openDayRegistrationForm(date)}
+                    className="bg-default-blue hover:bg-dark-blue/90 text-white px-6 py-3 text-sm md:text-md rounded-full shadow-lg transform transition-transform hover:scale-105 flex mx-auto group"
+                  >
+                    Register Now
+                    <ExternalLink className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
+                  </Button>
+                  {/* <p className="text-gray-500 mt-3 text-xs">
+                    Free registration • Opens in new tab
+                  </p> */}
+                </div>
+              </motion.div>
             </TabsContent>
           ))}
         </Tabs>
       </div>
 
-      {/* Seminar Detail Dialog */}
       <Dialog open={!!selectedSeminar} onOpenChange={(open) => !open && setSelectedSeminar(null)}>
         <DialogContent className="bg-darkest-blue border border-default-blue/20 text-white w-full max-w-3xl mx-auto p-6 rounded-xl shadow-lg overflow-auto max-h-[80vh] fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           {selected && (
@@ -80,9 +130,13 @@ const Seminars: React.FC = () => {
               <DialogHeader className="mb-3">
                 <div className="flex items-center gap-2 text-accent-blue mb-1">
                   <Calendar className="h-4 w-4" />
-                  <span className="text-sm font-medium">{selected.date} · {selected.time} · {selected.duration} minutes</span>
+                  <span className="text-sm font-medium">
+                    {selected.date} · {selected.time} · {selected.duration} minutes
+                  </span>
                 </div>
-                <DialogTitle className="text-xl font-bold text-white mb-1">{selected.title}</DialogTitle>
+                <DialogTitle className="text-xl font-bold text-white mb-1">
+                  {selected.title}
+                </DialogTitle>
                 <DialogDescription className="text-gray-300 text-sm">
                   {selected.description}
                 </DialogDescription>
@@ -90,19 +144,27 @@ const Seminars: React.FC = () => {
               
               <div className="space-y-4">
                 <div>
-                  <h4 className="text-md font-medium mb-2 text-white border-b border-default-blue/20 pb-1">Topics</h4>
+                  <h4 className="text-md font-medium mb-2 text-white border-b border-default-blue/20 pb-1">
+                    Topics
+                  </h4>
                   <div className="flex flex-wrap gap-2">
                     {selected.topics.map((topic, idx) => (
-                      <Badge key={idx} variant="outline" className="border-shining-yellow/30 text-shining-yellow px-2 py-0.5 text-xs">
+                      <Badge 
+                        key={idx}
+                        variant="outline"
+                        className="border-shining-yellow/30 text-shining-yellow px-2 py-0.5 text-xs"
+                      >
                         {topic}
                       </Badge>
                     ))}
                   </div>
                 </div>
                 
-                <div>
-                  <h4 className="text-md font-medium mb-2 text-white border-b border-default-blue/20 pb-1">Speaker</h4>
-                  {speaker && (
+                {speaker && (
+                  <div>
+                    <h4 className="text-md font-medium mb-2 text-white border-b border-default-blue/20 pb-1">
+                      Speaker
+                    </h4>
                     <div className="p-3 rounded-lg bg-darkest-blue/10 border border-default-blue/20 hover:border-accent-blue/40 transition-colors">
                       <div className="flex items-center gap-3 mb-2">
                         <Avatar className="h-12 w-12 border-2 border-blue-500/50 ring-2 ring-blue-500/10">
@@ -113,33 +175,28 @@ const Seminars: React.FC = () => {
                         </Avatar>
                         <div>
                           <p className="text-white font-medium text-base">{speaker.name}</p>
-                          <p className="text-blue-400 text-xs">{speaker.role} at {speaker.company}</p>
+                          <p className="text-blue-400 text-xs">
+                            {speaker.role} at {speaker.company}
+                          </p>
                         </div>
                       </div>
-                      <p className="text-gray-300 text-xs leading-relaxed line-clamp-2">{speaker.bio}</p>
+                      <p className="text-gray-300 text-xs leading-relaxed line-clamp-2">
+                        {speaker.bio}
+                      </p>
                     </div>
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
               
-              <DialogFooter className="mt-4 pt-2 border-t border-blue-500/20">
+              <DialogFooter className="mt-6">
                 <Button 
-                  className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto px-4 py-2 rounded-md font-medium transition-colors text-sm"
+                  className="bg-default-blue hover:bg-default-blue-dark text-white w-full sm:w-auto flex items-center gap-2"
                   onClick={() => {
                     setSelectedSeminar(null);
-                    // Scroll to registration section with a small delay
-                    setTimeout(() => {
-                      const element = document.getElementById('registration');
-                      if (element) {
-                        window.scrollTo({
-                          top: element.offsetTop - 80,
-                          behavior: 'smooth'
-                        });
-                      }
-                    }, 100);
+                    openDayRegistrationForm(selected.date);
                   }}
                 >
-                  Register for this Seminar
+                  Register for this Seminar <ExternalLink size={16} />
                 </Button>
               </DialogFooter>
             </>
