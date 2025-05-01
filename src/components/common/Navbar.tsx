@@ -19,6 +19,13 @@ const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
+  const scrollToHero = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   // Add scroll effect
   useEffect(() => {
     const handleScroll = () => {
@@ -37,8 +44,11 @@ const Navbar: React.FC = () => {
         ${isMobileMenuOpen ? 'bg-opacity-100' : isScrolled ? 'bg-opacity-95 backdrop-blur-md' : ''}
       `}>
         <div className='flex justify-between items-center w-full px-8 md:px-14 py-5'>
-          {/* Logo */}
-          <div className='flex items-center group cursor-pointer'>
+          {/* Logo Button */}
+          <button 
+            onClick={scrollToHero}
+            className='flex items-center group cursor-pointer hover:opacity-90 transition-all duration-300'
+          >
             <img 
               src="/favicon.png" 
               alt="SED 2025 Logo" 
@@ -47,7 +57,7 @@ const Navbar: React.FC = () => {
             <p className="hidden md:block ml-4 text-2xl font-bold">
               {`</`}<span className='text-accent-blue group-hover:text-shining-yellow transition-colors duration-300'>SED</span>{`2025>`}
             </p>
-          </div>
+          </button>
 
           {/* Desktop Navigation Menu */}
           <div className="hidden md:flex items-center gap-8">
