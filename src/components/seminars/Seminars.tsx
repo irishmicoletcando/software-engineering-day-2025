@@ -53,7 +53,7 @@ const Seminars: React.FC = () => {
   };
 
   return (
-    <section id="schedule" className="bg-darkest-blue pt-24 px-8 md:px-10">
+    <section id="schedule" className="bg-darkest-blue pt-16 md:pt-20 px-8 md:px-10">
       <div className="container mx-auto z-10">
         <SectionHeading
           subtitle="Event Program"

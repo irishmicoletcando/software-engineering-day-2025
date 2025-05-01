@@ -164,7 +164,7 @@ const ScrollLink: React.FC<{ to: string; className?: string; children: React.Rea
     const element = document.getElementById(to);
     if (element) {
       window.scrollTo({
-        top: element.offsetTop - 80,
+        top: element.offsetTop - 72,
         behavior: 'smooth'
       });
     }
@@ -190,7 +190,7 @@ const MobileScrollLink: React.FC<{
     if (element) {
       setTimeout(() => {
         window.scrollTo({
-          top: element.offsetTop - 80,
+          top: element.offsetTop - 72,
           behavior: 'smooth'
         });
       }, 100);
