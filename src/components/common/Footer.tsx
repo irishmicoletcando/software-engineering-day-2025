@@ -68,8 +68,8 @@ const Footer: React.FC = () => {
           <div className="w-full max-w-6xl">
             <div className="space-y-12 lg:space-y-6">
               <div className="lg:min-w-max">
-                {/* Desktop View - Single Row (Large screens only) */}
-                <div className="hidden lg:flex items-start gap-12 justify-center">
+                {/* Desktop View - Single Row */}
+                <div className="hidden lg:flex items-center justify-center gap-16 w-full">
                   {/* Primary Partners */}
                   <div className="space-y-4">
                     <h3 className="text-center text-gray-400 text-xs uppercase tracking-wider">
@@ -146,13 +146,13 @@ const Footer: React.FC = () => {
                 </div>
 
                 {/* Tablet/Mobile View - Stacked */}
-                <div className="flex flex-col space-y-12 lg:hidden">
+                <div className="flex flex-col space-y-12 lg:hidden w-full">
                   {/* Primary Partners - Tablet/Mobile */}
-                  <div className="space-y-4">
+                  <div className="space-y-4 w-full">
                     <h3 className="text-center text-gray-400 text-xs uppercase tracking-wider">
                       In Partnership With
                     </h3>
-                    <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 justify-items-center">
+                    <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 place-items-center">
                       {[
                         { name: 'ACCESS', type: 'png' },
                         { name: 'MRSP', type: 'png' },
@@ -174,11 +174,11 @@ const Footer: React.FC = () => {
                   </div>
 
                   {/* Secondary Partners - Tablet/Mobile */}
-                  <div className="space-y-4">
+                  <div className="space-y-4 w-full">
                     <h3 className="text-center text-gray-400 text-xs uppercase tracking-wider">
                       Co-brought to You By
                     </h3>
-                    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 justify-items-center">
+                    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 place-items-center">
                       {[
                         { name: 'AcadArena', type: 'png' },
                         { name: 'POCKY', type: 'png' },
@@ -199,11 +199,11 @@ const Footer: React.FC = () => {
                   </div>
 
                   {/* BSCOE Partners - Tablet/Mobile */}
-                  <div className="space-y-4">
+                  <div className="space-y-4 w-full">
                     <h3 className="text-center text-gray-400 text-xs uppercase tracking-wider">
                       In Collaboration With
                     </h3>
-                    <div className="grid grid-cols-2 gap-4 sm:gap-6 justify-items-center">
+                    <div className="grid grid-cols-2 gap-4 sm:gap-6 place-items-center">
                       {[
                         { name: 'BSCOE-4-1-logo', type: 'png' },
                         { name: 'BSCOE-4-2-logo', type: 'png' }
