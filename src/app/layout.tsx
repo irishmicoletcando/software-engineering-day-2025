@@ -1,5 +1,6 @@
 import '@/styles/globals.css'
 import { inter } from '@/styles/fonts';
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata = {
   title: 'Software Engineering Day 2025',
@@ -16,7 +17,10 @@ const RootLayout = ({children} : {
       <head>
         <link rel="icon" href="/favicon.png" sizes="any" />
       </head>
-      <body className={`${inter.className} antialiased bg-darkest-blue text-white`}>{children}</body>
+      <body className={`${inter.className} antialiased bg-darkest-blue text-white`}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }
