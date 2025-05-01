@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="bg-default-blue hover:bg-default-blue/90 text-white px-5 py-2 rounded-lg transition-all duration-300 flex items-center gap-2 group">
+                <button className="bg-default-blue hover:bg-default-blue/90 hover:cursor-pointer text-white px-5 py-2 rounded-lg transition-all duration-300 flex items-center gap-2 group">
                   Register Now
                   <ChevronDown size={16} className="group-hover:rotate-180 transition-transform duration-300" />
                 </button>

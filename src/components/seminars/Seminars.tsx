@@ -108,7 +108,7 @@ const Seminars: React.FC = () => {
                   </h4>
                   <Button 
                     onClick={() => openDayRegistrationForm(date)}
-                    className="bg-default-blue hover:bg-dark-blue/90 text-white px-6 py-3 text-sm md:text-md rounded-full shadow-lg transform transition-transform hover:scale-105 flex mx-auto group"
+                    className="bg-default-blue hover:bg-dark-blue/90 hover:cursor-pointer text-white px-6 py-3 text-sm md:text-md rounded-full shadow-lg transform transition-transform hover:scale-105 flex mx-auto group"
                   >
                     Register Now
                     <ExternalLink className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />

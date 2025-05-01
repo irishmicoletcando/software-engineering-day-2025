@@ -65,7 +65,7 @@ const SeminarCard: React.FC<SeminarCardProps> = ({ seminar, index, onViewDetails
 
                 <Button
                   variant="outline"
-                  className="bg-darkest-blue border-default-blue text-default-blue hover:bg-default-blue hover:text-white"
+                  className="bg-darkest-blue border-default-blue text-default-blue hover:bg-default-blue hover:text-white hover:cursor-pointer"
                   onClick={() => onViewDetails(seminar.id)}
                 >
                   View Details

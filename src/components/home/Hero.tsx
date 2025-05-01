@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.5 }}
             >
               <h1 className="text-lg sm:text-xl md:text-2xl text-white font-light tracking-[0.15em] md:tracking-[0.2em]">
-                7th SOFTWARE ENGINEERING DAY
+                7TH SOFTWARE ENGINEERING DAY
               </h1>
 
               {/* SPARK */}
@@ -110,7 +110,7 @@ const Hero: React.FC = () => {
           >
             <button
               onClick={() => setIsRegistrationOpen(true)}
-              className="bg-gradient-to-r from-dark-blue to-accent-blue hover:from-dark-blue hover:to-default-blue text-white px-8 py-3 text-sm md:text-base rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 flex items-center group"
+              className="bg-gradient-to-r from-dark-blue to-accent-blue hover:from-dark-blue hover:to-default-blue hover:cursor-pointer text-white px-8 py-3 text-sm md:text-base rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 flex items-center group"
             >
               Register Now
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
@@ -118,7 +118,7 @@ const Hero: React.FC = () => {
             
             <ScrollLink
               to="schedule"
-              className="border border-light-blue text-white hover:bg-dark-blue/20 px-8 py-3 text-sm md:text-base rounded-full shadow-lg transform transition-all duration-300 hover:scale-105"
+              className="border border-light-blue text-white hover:bg-dark-blue/20 hover:cursor-pointer px-8 py-3 text-sm md:text-base rounded-full shadow-lg transform transition-all duration-300 hover:scale-105"
             >
               View Schedule
             </ScrollLink>
