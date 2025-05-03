@@ -17,7 +17,7 @@ const RootLayout = ({children} : {
       <head>
         <link rel="icon" href="/favicon.png" sizes="any" />
       </head>
-      <body className={`${inter.className} antialiased bg-darkest-blue text-white`}>
+      <body className={`${inter.className} antialiased bg-black text-white`}>
         {children}
         <Analytics />
       </body>

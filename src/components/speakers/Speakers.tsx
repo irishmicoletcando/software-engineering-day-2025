@@ -16,14 +16,15 @@ const Speakers: React.FC = () => {
   const selected = selectedSpeaker ? speakers.find((speaker) => speaker.id === selectedSpeaker) : null;
 
   return (
-    <section id="speakers" className="bg-darkest-blue relative pt-16 md:pt-20 px-8 md:px-10">
+    <section id="speakers" className="bg-black relative pt-16 md:pt-20 px-8 md:px-10">
       {/* Background Animation */}
       <SpeakersBackground />
 
       <div className="container mx-auto relative z-10">
         <SectionHeading 
           subtitle="Expert Presenters"
-          title="Meet Our Speakers"
+          title="Meet Our"
+          maintitle='Speakers'
           description="Learn from industry leaders and experts who are shaping the future of Big Data and Machine Learning."
         />
         
@@ -41,7 +42,7 @@ const Speakers: React.FC = () => {
 
       {/* Speaker Detail Dialog */}
       <Dialog open={!!selectedSpeaker} onOpenChange={(open) => !open && setSelectedSpeaker(null)}>
-        <DialogContent className="bg-darkest-blue/95 backdrop-blur-md border border-default-blue/20 text-white w-[95%] max-w-3xl max-h-[90vh] overflow-y-auto p-4 sm:p-6 mx-auto">
+        <DialogContent className="bg-accent-black/95 backdrop-blur-md border border-sea-green/20 text-white w-[95%] max-w-3xl max-h-[90vh] overflow-y-auto p-4 sm:p-6 mx-auto">
           {selected && (
             <>
               <DialogHeader className="space-y-4">
@@ -50,7 +51,7 @@ const Speakers: React.FC = () => {
                     <h3 className="text-xl sm:text-2xl font-bold text-white break-words">
                       {selected.name}
                     </h3>
-                    <p className="text-accent-blue text-sm sm:text-base font-normal mt-1">
+                    <p className="text-light-sea-green text-sm sm:text-base font-normal mt-1">
                       {selected.role} at {selected.company}
                     </p>
                   </div>
@@ -67,14 +68,14 @@ const Speakers: React.FC = () => {
                     <Badge 
                       key={idx} 
                       variant="outline" 
-                      className="border-default-blue/30 text-default-blue text-xs sm:text-sm py-1 px-2"
+                      className="border-sea-green/30 text-sea-green text-xs sm:text-sm py-1 px-2"
                     >
                       {topic}
                     </Badge>
                   ))}
                 </div>
 
-                <div className="flex gap-3 mt-6 pt-4 border-t border-default-blue/20">
+                <div className="flex gap-3 mt-6 pt-4 border-t border-sea-green/20">
                   {selected.linkedin && (
                     <a
                       href={selected.linkedin}

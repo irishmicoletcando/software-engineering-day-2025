@@ -76,7 +76,22 @@ module.exports = {
             DEFAULT: '#4A5568',
             dark: '#2D3748'
           }
-        }
+        },
+        'darkest': 'var(--color-darkest)',
+        'dark': 'var(--color-dark)',
+        'accent-black': 'var(--color-accent-black)',
+        'shining-yellow': 'var(--color-shining-yellow)',
+        'bright-orange': 'var(--color-bright-orange)',
+        'dull-yellow': 'var(--color-dull-yellow)',
+        'light-sea-green': 'var(--color-light-sea-green)',
+        'sea-green': 'var(--color-sea-green)',
+        'bright-sea-green': 'var(--color-bright-sea-green)',
+        'dull-sea-green': 'var(--color-dull-sea-green)',
+        'dark-red': 'var(--color-dark-red)',
+      },
+      backgroundImage: {
+        'gradient-primary': 'linear-gradient(to right, var(--color-sea-green), var(--color-light-sea-green))',
+        'gradient-secondary': 'linear-gradient(to right, var(--color-shining-yellow), var(--color-bright-orange))',
       },
       borderRadius: {
         lg: 'var(--radius)',

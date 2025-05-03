@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-darkest-blue pt-24 pb-8">
+    <footer className="bg-black pt-24 pb-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center space-y-6">
           {/* Logo and Title */}
@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
             />
             <h2 className="text-2xl font-bold text-center text-white">
               Software Engineering Day 
-              <span className="text-accent-blue"> 2025</span>
+              <span className="bg-gradient-to-r from-shining-yellow to-bright-orange bg-clip-text text-transparent"> 2025</span>
             </h2>
           </div>
 
@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
                 href="https://www.facebook.com/sedspark2025" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-10 w-10 rounded-full bg-default-blue/10 flex items-center justify-center text-default-blue hover:bg-default-blue hover:text-white transition-colors"
+                className="h-10 w-10 rounded-full bg-dull-yellow/10 flex items-center justify-center text-shining-yellow hover:bg-bright-orange hover:text-white transition-colors"
               >
                 <div className="social-icon-wrapper">
                   <Facebook size={20} className="group-hover:scale-110 transition-transform" />
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
                 href="https://www.instagram.com/sedspark2025/" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-10 w-10 rounded-full bg-default-blue/10 flex items-center justify-center text-default-blue hover:bg-default-blue hover:text-white transition-colors"
+                className="h-10 w-10 rounded-full bg-dull-yellow/10 flex items-center justify-center text-shining-yellow hover:bg-bright-orange hover:text-white transition-colors"
               >
                 <div className="social-icon-wrapper">
                   <Instagram size={20} className="group-hover:scale-110 transition-transform" />
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
                 href="https://www.tiktok.com/@sed.2025" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-10 w-10 rounded-full bg-default-blue/10 flex items-center justify-center text-default-blue hover:bg-default-blue hover:text-white transition-colors"
+                className="h-10 w-10 rounded-full bg-dull-yellow/10 flex items-center justify-center text-shining-yellow hover:bg-bright-orange hover:text-white transition-colors"
               >
                 <div className="social-icon-wrapper">
                   <FaTiktok size={18} className="group-hover:scale-110 transition-transform" />
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
             </div>
             <a 
               href="mailto:sed2025spark@gmail.com"
-              className="text-gray-400 hover:text-accent-blue transition-colors text-sm tracking-wide"
+              className="text-gray-400 hover:text-shining-yellow transition-colors text-sm tracking-wide"
             >
               sed2025spark@gmail.com
             </a>
@@ -226,7 +226,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Copyright */}
-          <div className="border-t border-default-blue/10 w-full pt-8 text-center">
+          <div className="border-t border-sea-green/10 w-full pt-8 text-center">
             <p className="text-gray-400 text-sm">
               &copy; {new Date().getFullYear()} Software Engineering Day 2025. All rights reserved.
             </p>

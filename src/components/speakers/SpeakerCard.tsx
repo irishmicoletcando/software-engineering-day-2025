@@ -20,7 +20,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index, onViewProfile
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
-      <div className="bg-gradient-to-br from-darkest-blue to-darkest-blue/70 border border-default-blue/10 overflow-hidden hover:border-default-blue/30 transition-all group rounded-lg">
+      <div className="bg-gradient-to-br from-black to-darkest-blue/70 border border-shining-yellow/10 overflow-hidden hover:border-shining-yellow/30 transition-all group rounded-lg">
         <div className="aspect-[3/2] relative overflow-hidden">
           <Image
             src={speaker.image || '/images/default-speaker.jpg'}
@@ -33,12 +33,12 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index, onViewProfile
             className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
             priority={index < 3}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-darkest-blue via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-accent-black via-transparent to-transparent"></div>
         </div>
 
         <div className="p-6">
           <h3 className="text-xl font-semibold text-white mb-1">{speaker.name}</h3>
-          <p className="text-accent-blue mb-3">
+          <p className="text-light-sea-green mb-3">
             {speaker.role} at {speaker.company}
           </p>
 

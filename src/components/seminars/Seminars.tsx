@@ -53,23 +53,24 @@ const Seminars: React.FC = () => {
   };
 
   return (
-    <section id="schedule" className="bg-darkest-blue pt-16 md:pt-20 px-8 md:px-10">
+    <section id="schedule" className="bg-black pt-16 md:pt-20 px-8 md:px-10">
       <div className="container mx-auto z-10">
         <SectionHeading
           subtitle="Event Program"
-          title="Seminar Schedule"
+          title="Seminar"
+          maintitle="Schedule"
           description="Three days of inspiring sessions, hands-on workshops, and networking opportunities with industry leaders."
         />
       </div>
 
       <div className="mb-8 flex flex-col md:flex-row justify-between gap-4">
         <Tabs defaultValue={dates[0]} className="w-full">
-          <TabsList className="bg-default-gray/20 border border-default-blue/20 overflow-x-auto flex h-10 items-center justify-start rounded-lg w-full">
+          <TabsList className="bg-default-gray/20 border border-sea-green/20 overflow-x-auto flex h-10 items-center justify-start rounded-lg w-full">
             {dates.map(date => (
               <TabsTrigger
                 key={date}
                 value={date}
-                className="text-gray-300 data-[state=active]:bg-default-blue data-[state=active]:text-white"
+                className="text-gray-300 data-[state=active]:bg-sea-green data-[state=active]:text-accent-black"
               >
                 {date}
               </TabsTrigger>
@@ -108,7 +109,7 @@ const Seminars: React.FC = () => {
                   </h4>
                   <Button 
                     onClick={() => openDayRegistrationForm(date)}
-                    className="bg-default-blue hover:bg-dark-blue/90 hover:cursor-pointer text-white px-6 py-3 text-sm md:text-md rounded-full shadow-lg transform transition-transform hover:scale-105 flex mx-auto group"
+                    className="bg-shining-yellow hover:bg-bright-orange hover:cursor-pointer text-accent-black font-bold px-6 py-3 text-sm md:text-md rounded-full shadow-lg transform transition-transform hover:scale-105 flex mx-auto group"
                   >
                     Register Now
                     <ExternalLink className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
@@ -125,12 +126,12 @@ const Seminars: React.FC = () => {
           
       {/* Seminar Detail Dialog */}
       <Dialog open={!!selectedSeminar} onOpenChange={(open) => !open && setSelectedSeminar(null)}>
-        <DialogContent className="bg-darkest-blue/95 backdrop-blur-md border border-default-blue/20 text-white w-[95%] max-w-3xl max-h-[90vh] overflow-y-auto p-4 sm:p-6 mx-auto">
+        <DialogContent className="bg-accent-black/95 backdrop-blur-md border border-sea-green/20 text-white w-[95%] max-w-3xl max-h-[90vh] overflow-y-auto p-4 sm:p-6 mx-auto">
           {selected && (
             <>
               <DialogHeader className="space-y-4">
                 {/* Date and Time */}
-                <div className="flex items-center gap-2 text-accent-blue">
+                <div className="flex items-center gap-2 text-light-sea-green">
                   <Calendar className="h-4 w-4 sm:h-5 sm:w-5" />
                   <span className="text-sm sm:text-base font-medium">
                     {selected.date} · {selected.time} · {selected.duration} minutes
@@ -151,7 +152,7 @@ const Seminars: React.FC = () => {
               <div className="mt-6 space-y-6">
                 {/* Topics Section */}
                 <div className="space-y-3">
-                  <h4 className="text-base sm:text-lg font-medium text-white border-b border-default-blue/20 pb-2">
+                  <h4 className="text-base sm:text-lg font-medium text-white border-b border-sea-green/20 pb-2">
                     Topics
                   </h4>
                   <div className="flex flex-wrap gap-2">
@@ -170,14 +171,14 @@ const Seminars: React.FC = () => {
                 {/* Speaker Section */}
                 {speaker && (
                   <div className="space-y-3">
-                    <h4 className="text-base sm:text-lg font-medium text-white border-b border-default-blue/20 pb-2">
+                    <h4 className="text-base sm:text-lg font-medium text-white border-b border-sea-green/20 pb-2">
                       Speaker
                     </h4>
-                    <div className="p-4 rounded-lg bg-default-blue/5 border border-default-blue/20 hover:border-accent-blue/40 transition-colors duration-300">
+                    <div className="p-4 rounded-lg bg-sea-green/5 border border-sea-green/20 hover:border-light-sea-green/40 transition-colors duration-300">
                       <div className="flex items-start gap-4 mb-3">
-                        <Avatar className="h-14 w-14 sm:h-16 sm:w-16 border-2 border-accent-blue/50 ring-2 ring-accent-blue/10">
+                        <Avatar className="h-14 w-14 sm:h-16 sm:w-16 border-2 border-light-sea-green/50 ring-2 ring-light-sea-green/10">
                           <AvatarImage src={speaker.image} alt={speaker.name} />
-                          <AvatarFallback className="bg-default-blue text-white text-lg">
+                          <AvatarFallback className="bg-sea-green text-white text-lg">
                             {speaker.name.charAt(0)}
                           </AvatarFallback>
                         </Avatar>
@@ -185,7 +186,7 @@ const Seminars: React.FC = () => {
                           <p className="text-white font-medium text-base sm:text-lg">
                             {speaker.name}
                           </p>
-                          <p className="text-accent-blue text-sm">
+                          <p className="text-light-sea-green text-sm">
                             {speaker.role} at {speaker.company}
                           </p>
                         </div>
@@ -199,13 +200,13 @@ const Seminars: React.FC = () => {
               </div>
                     
               {/* Footer */}
-              <DialogFooter className="mt-8 pt-4 border-t border-default-blue/20">
+              <DialogFooter className="mt-8 pt-4 border-t border-sea-green/20">
                 <Button 
                   onClick={() => {
                     setSelectedSeminar(null);
                     openDayRegistrationForm(selected.date);
                   }}
-                  className="w-full sm:w-auto bg-gradient-to-r from-default-blue to-accent-blue hover:from-dark-blue hover:to-default-blue text-white px-6 py-3 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group"
+                  className="w-full sm:w-auto bg-shining-yellow hover:bg-bright-orange hover:cursor-pointer text-accent-black px-6 py-3 rounded-full shadow-lg font-semibold transform transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group"
                 >
                   Register for this Seminar
                   <ExternalLink 

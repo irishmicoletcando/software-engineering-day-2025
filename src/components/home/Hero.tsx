@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-darkest-blue">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-accent-black">
       {/* Radial dark background gradient overlay */}
       <div className="absolute inset-0 z-0" 
         style={{
@@ -91,11 +91,11 @@ const Hero: React.FC = () => {
                   transition={{ delay: 0.6, duration: 0.5 }}
                   className="relative inline-block"
                 >
-                  <span className="text-accent-blue text-glow">S</span>HAPING{' '} 
-                  <span className="text-accent-blue text-glow">P</span>ROGRESS{' '} 
-                  <span className="text-accent-blue text-glow">A</span>ND{' '} 
-                  <span className="text-accent-blue text-glow">R</span>EVOLUTIONIZING{' '} 
-                  <span className="text-accent-blue text-glow">K</span>NOWLEDGE
+                  <span className="text-dull-yellow font-bold text-glow">S</span>HAPING{' '} 
+                  <span className="text-dull-yellow font-bold text-glow">P</span>ROGRESS{' '} 
+                  <span className="text-dull-yellow font-bold text-glow">A</span>ND{' '} 
+                  <span className="text-dull-yellow font-bold text-glow">R</span>EVOLUTIONIZING{' '} 
+                  <span className="text-dull-yellow font-bold text-glow">K</span>NOWLEDGE
                 </motion.span>
               </p>
             </motion.div>
@@ -110,7 +110,8 @@ const Hero: React.FC = () => {
           >
             <button
               onClick={() => setIsRegistrationOpen(true)}
-              className="bg-gradient-to-r from-dark-blue to-accent-blue hover:from-dark-blue hover:to-default-blue hover:cursor-pointer text-white px-8 py-3 text-sm md:text-base rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 flex items-center group"
+              // className="bg-gradient-to-r from-bright-orange to-shining-yellow hover:from-bright-orange hover:to-dull-yellow hover:cursor-pointer text-black font-bold px-8 py-3 text-sm md:text-base rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 flex items-center group"
+              className="bg-shining-yellow hover:bg-bright-orange hover:cursor-pointer text-black font-bold px-8 py-3 text-sm md:text-base rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 flex items-center group"
             >
               Register Now
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
@@ -118,7 +119,7 @@ const Hero: React.FC = () => {
             
             <ScrollLink
               to="schedule"
-              className="border border-light-blue text-white hover:bg-dark-blue/20 hover:cursor-pointer px-8 py-3 text-sm md:text-base rounded-full shadow-lg transform transition-all duration-300 hover:scale-105"
+              className="border border-sea-green text-white hover:bg-dull-sea-green/20 hover:cursor-pointer px-8 py-3 text-sm md:text-base rounded-full shadow-lg transform transition-all duration-300 hover:scale-105"
             >
               View Schedule
             </ScrollLink>
@@ -132,11 +133,11 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <div className="flex items-center gap-2 md:gap-3 text-light-gray">
-              <CalendarDays className="text-accent-blue" size={22} />
+              <CalendarDays className="text-sea-green" size={22} />
               <span className="text-md md:text-lg">May 5, 6, and 8, 2025</span>
             </div>
             <div className="flex items-center gap-2 md:gap-3 text-light-gray">
-              <MapPin className="text-accent-blue" size={22} />
+              <MapPin className="text-sea-green" size={22} />
               <span className="text-md md:text-lg">PUP AVR 4th Floor - CEA Building</span>
             </div>
           </motion.div>
@@ -149,7 +150,7 @@ const Hero: React.FC = () => {
         onClose={() => setIsRegistrationOpen(false)}
       />
 
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-darkest-blue to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-accent-black to-transparent"></div>
     </div>
   );
 };

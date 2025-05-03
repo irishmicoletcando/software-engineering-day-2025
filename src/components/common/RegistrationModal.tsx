@@ -18,10 +18,10 @@ const REGISTRATION_URLS = {
 const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, onClose }) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="bg-darkest-blue/95 backdrop-blur-lg border border-accent-blue/20 text-white max-w-[90%] md:max-w-lg mx-auto p-4 md:p-6">
+      <DialogContent className="bg-accent-black/95 backdrop-blur-lg border border-shining-yellow/20 text-white max-w-[90%] md:max-w-lg mx-auto p-4 md:p-6">
         <DialogHeader className="space-y-3">
           <DialogTitle className="text-xl md:text-2xl font-bold text-center px-2">
-            <span className="bg-gradient-to-r from-accent-blue to-light-blue bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-shining-yellow to-bright-orange bg-clip-text text-transparent">
               Choose Your Session Date
             </span>
           </DialogTitle>
@@ -42,18 +42,18 @@ const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, onClose }
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block w-full p-3 md:p-4 rounded-lg border border-accent-blue/20 hover:border-accent-blue bg-default-blue/5 hover:bg-default-blue/10 transition-all duration-300"
+                className="group block w-full p-3 md:p-4 rounded-lg border border-dull-yellow/20 hover:border-shining-yellow bg-sea-green/5 hover:bg-gray/10 transition-all duration-300"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 md:gap-3">
-                    <div className="p-1.5 md:p-2 rounded-full bg-accent-blue/10 group-hover:bg-accent-blue/20 transition-colors">
-                      <Calendar className="w-4 h-4 md:w-5 md:h-5 text-accent-blue" />
+                    <div className="p-1.5 md:p-2 rounded-full bg-light-sea-green/10 group-hover:bg-light-sea-green/20 transition-colors">
+                      <Calendar className="w-4 h-4 md:w-5 md:h-5 text-shining-yellow" />
                     </div>
                     <span className="text-base md:text-lg text-gray-200 group-hover:text-white transition-colors">
                       {date}
                     </span>
                   </div>
-                  <ExternalLink className="w-4 h-4 md:w-5 md:h-5 text-gray-400 group-hover:text-accent-blue transition-colors" />
+                  <ExternalLink className="w-4 h-4 md:w-5 md:h-5 text-gray-400 group-hover:text-shining-yellow transition-colors" />
                 </div>
               </a>
             </motion.div>

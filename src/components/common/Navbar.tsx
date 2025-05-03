@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
     <div className="fixed w-full z-50">
       <nav className={`
         w-full transition-all duration-300
-        ${isScrolled || isMobileMenuOpen ? 'bg-darkest-blue shadow-lg' : 'bg-transparent'}
+        ${isScrolled || isMobileMenuOpen ? 'bg-black shadow-lg' : 'bg-transparent'}
         ${isMobileMenuOpen ? 'bg-opacity-100' : isScrolled ? 'bg-opacity-95 backdrop-blur-md' : ''}
       `}>
         <div className='flex justify-between items-center w-full px-8 md:px-14 py-5'>
@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
               className="w-10 h-10 md:w-12 md:h-12 group-hover:rotate-12 transition-transform duration-300" 
             />
             <p className="hidden md:block ml-4 text-2xl font-bold">
-              {`</`}<span className='text-accent-blue group-hover:text-shining-yellow transition-colors duration-300'>SED</span>{`2025>`}
+              {`</`}<span className='text-light-sea-green group-hover:text-shining-yellow transition-colors duration-300'>SED</span>{`2025>`}
             </p>
           </button>
 
@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
               <span className="relative z-10 text-gray-300 group-hover:text-white transition-colors duration-300">
                 Speakers
               </span>
-              <span className="absolute inset-0 bg-default-blue/10 rounded-lg scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              <span className="absolute inset-0 bg-sea-green/10 rounded-lg scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
             </ScrollLink>
             <ScrollLink 
               to="schedule" 
@@ -77,17 +77,17 @@ const Navbar: React.FC = () => {
               <span className="relative z-10 text-gray-300 group-hover:text-white transition-colors duration-300">
                 Schedule
               </span>
-              <span className="absolute inset-0 bg-default-blue/10 rounded-lg scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              <span className="absolute inset-0 bg-sea-green/10 rounded-lg scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
             </ScrollLink>
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="bg-default-blue hover:bg-default-blue/90 hover:cursor-pointer text-white px-5 py-2 rounded-lg transition-all duration-300 flex items-center gap-2 group">
+                <button className="bg-shining-yellow hover:bg-bright-orange/90 hover:cursor-pointer text-accent-black font-bold px-5 py-2 rounded-lg transition-all duration-300 flex items-center gap-2 group">
                   Register Now
                   <ChevronDown size={16} className="group-hover:rotate-180 transition-transform duration-300" />
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-darkest-blue border border-default-blue/20 mt-2">
+              <DropdownMenuContent className="bg-accent-black border border-sea-green/20 mt-2">
                 {Object.entries(REGISTRATION_URLS).map(([date, url]) => (
                   <DropdownMenuItem key={date} asChild>
                     <a
@@ -118,7 +118,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
         <div 
-          className="fixed inset-0 text-center bg-darkest-blue"
+          className="fixed inset-0 text-center bg-accent-black"
           style={{ marginTop: "72px" }}
         >
           <div className="flex flex-col gap-6 w-full px-8 pt-8">
@@ -137,13 +137,13 @@ const Navbar: React.FC = () => {
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="w-full bg-default-blue hover:bg-default-blue/90 text-white px-5 py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group">
+                <button className="w-full bg-sea-green hover:bg-sea-green/90 text-white px-5 py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group">
                   Register Now
                   <ChevronDown size={16} className="group-hover:rotate-180 transition-transform duration-300" />
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent 
-                className="bg-darkest-blue/95 backdrop-blur-md border border-default-blue/20 mt-2 w-[calc(100vw-4rem)]"
+                className="bg-accent-black/95 backdrop-blur-md border border-sea-green/20 mt-2 w-[calc(100vw-4rem)]"
                 sideOffset={5}
               >
                 {Object.entries(REGISTRATION_URLS).map(([date, url]) => (
