@@ -25,7 +25,16 @@ const SeminarCard: React.FC<SeminarCardProps> = ({ seminar, index, onViewDetails
       transition={{ duration: 0.3, delay: index * 0.05 }}
     >
       <Card 
-        className="bg-gradient-to-br from-accent-black to-darkest border border-sea-green/10 hover:border-light-sea-green/30 hover:shadow-[0_0_15px_2px_rgba(121,201,212,0.1)] hover:shadow-light-sea-green/10 hover:-translate-y-1 transition-all duration-300 ease-in-out overflow-hidden group after:absolute after:inset-0 after:bg-gradient-to-r after:from-sea-green/0 after:to-light-sea-green/5 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-300 *:relative"
+        className="
+          bg-gradient-to-br from-accent-black to-darkest 
+          border border-sea-green/10 
+          hover:border-light-sea-green/30 
+          hover:shadow-[0_0_15px_2px_rgba(121,201,212,0.1)] 
+          hover:-translate-y-1 
+          transition-all duration-300 ease-in-out 
+          overflow-hidden group
+          relative
+        "
       >
         <CardContent className="p-0">
           <div className="flex flex-col md:flex-row">
@@ -67,7 +76,14 @@ const SeminarCard: React.FC<SeminarCardProps> = ({ seminar, index, onViewDetails
 
                 <Button
                   variant="outline"
-                  className="bg-accent-black border-sea-green text-sea-green hover:bg-dull-sea-green hover:text-white hover:border-none hover:cursor-pointer"
+                  className="
+                    relative z-10 
+                    bg-accent-black border-sea-green text-sea-green 
+                    hover:bg-dull-sea-green hover:text-white 
+                    hover:border-light-sea-green hover:cursor-pointer
+                    transition-all duration-300
+                    active:scale-95
+                  "
                   onClick={() => onViewDetails(seminar.id)}
                 >
                   View Details
