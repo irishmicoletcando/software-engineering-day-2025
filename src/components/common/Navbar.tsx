@@ -137,7 +137,7 @@ const Navbar: React.FC = () => {
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="w-full bg-sea-green hover:bg-sea-green/90 text-white px-5 py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group">
+                <button className="w-full bg-shining-yellow hover:bg-bright-orange/90 hover:cursor-pointer text-accent-black font-bold px-5 py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group">
                   Register Now
                   <ChevronDown size={16} className="group-hover:rotate-180 transition-transform duration-300" />
                 </button>
