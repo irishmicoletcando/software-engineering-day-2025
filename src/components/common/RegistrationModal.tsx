@@ -19,14 +19,6 @@ const REGISTRATION_URLS = {
 const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, onClose }) => {
   const shouldReduceMotion = useReducedMotion();
 
-  // Simple fade animation
-  const fadeIn = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1 },
-    exit: { opacity: 0 },
-    transition: { duration: 0.2 }
-  };
-
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="bg-accent-black/95 backdrop-blur-lg border border-shining-yellow/20 text-white max-w-[90%] md:max-w-lg mx-auto p-4 md:p-6">
