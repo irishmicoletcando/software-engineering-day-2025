@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const SpeakersBackground: React.FC = () => {
   return (
     <div className="absolute inset-0 overflow-hidden">
-      <div className="absolute inset-0 bg-accent-black opacity-30" />
+      <div className="absolute inset-0 bg-black" />
 
       {/* Floating Yellow Circle */}
       <motion.div
