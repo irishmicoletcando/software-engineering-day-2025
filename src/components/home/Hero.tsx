@@ -6,9 +6,25 @@ import DataVisBackground from '@/components/home/DataVisBackground';
 import Image from 'next/image';
 import { useState } from 'react';
 import RegistrationModal from '@/components/common/RegistrationModal';
+import { useReducedMotion } from '@/hooks/useReducedMotion';
 
 const Hero: React.FC = () => {
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
+
+  // Basic animation variants
+  const fadeIn = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    transition: { duration: 0.3 }
+  };
+
+  // Optimized animation variants
+  const fadeInUp = {
+    initial: shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 },
+    animate: shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 },
+    transition: { duration: 0.3 }
+  };
 
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-accent-black">
@@ -23,44 +39,61 @@ const Hero: React.FC = () => {
 
       <div className="container mx-auto px-6 md:px-6 relative z-10 flex items-center justify-center min-h-screen">
         <motion.div
+          {...fadeInUp}
+          transition={{ duration: 0.4 }}
           className="flex flex-col items-center justify-center w-full gap-8 md:gap-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
         >
           {/* Logos Section */}
-          <motion.div
-            className="flex justify-center items-center gap-4 md:gap-8"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            {[
-              { name: 'PUP', type: 'png' },
-              { name: 'CPE', type: 'png' },
-              { name: 'SED', type: 'png' }
-            ].map((logo) => (
-              <div key={logo.name} className="relative group">
-                <Image
-                  src={`/assets/partners/${logo.name}.${logo.type}`}
-                  alt={`${logo.name} Logo`}
-                  width={80}
-                  height={80}
-                  className="h-8 sm:h-10 md:h-12 w-auto opacity-70 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
-                />
-                <div className="absolute -inset-2 bg-accent-blue/5 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-            ))}
-          </motion.div>
+          {!shouldReduceMotion ? (
+            <motion.div
+              className="flex justify-center items-center gap-4 md:gap-8"
+              {...fadeInUp}
+              transition={{ duration: 0.3 }}
+            >
+              {[
+                { name: 'PUP', type: 'png' },
+                { name: 'CPE', type: 'png' },
+                { name: 'SED', type: 'png' }
+              ].map((logo) => (
+                <div key={logo.name} className="relative group">
+                  <Image
+                    src={`/assets/partners/${logo.name}.${logo.type}`}
+                    alt={`${logo.name} Logo`}
+                    width={80}
+                    height={80}
+                    className="h-8 sm:h-10 md:h-12 w-auto opacity-70 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute -inset-2 bg-accent-blue/5 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              ))}
+            </motion.div>
+          ) : (
+            <div className="flex justify-center items-center gap-4 md:gap-8">
+              {[
+                { name: 'PUP', type: 'png' },
+                { name: 'CPE', type: 'png' },
+                { name: 'SED', type: 'png' }
+              ].map((logo) => (
+                <div key={logo.name} className="relative group">
+                  <Image
+                    src={`/assets/partners/${logo.name}.${logo.type}`}
+                    alt={`${logo.name} Logo`}
+                    width={80}
+                    height={80}
+                    className="h-8 sm:h-10 md:h-12 w-auto opacity-70 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute -inset-2 bg-accent-blue/5 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              ))}
+            </div>
+          )}
 
           {/* Main content */}
           <div className="space-y-8 md:space-y-12 text-center max-w-5xl mx-auto px-4">
-            {/* Title Section */}
             <motion.div
+              {...fadeIn}
+              transition={{ duration: 0.4 }}
               className="space-y-4 md:space-y-6"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
             >
               <h1 className="text-lg sm:text-xl md:text-2xl text-white font-light tracking-[0.15em] md:tracking-[0.2em]">
                 7TH SOFTWARE ENGINEERING DAY
@@ -68,10 +101,9 @@ const Hero: React.FC = () => {
 
               {/* SPARK */}
               <motion.div
+                {...fadeIn}
+                transition={{ duration: 0.5 }}
                 className="relative"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8 }}
               >
                 <div 
                   className="text-7xl lg:text-8xl xl:text-9xl font-black tracking-[0.1em] md:tracking-[0.2em] spark-text"
@@ -83,53 +115,69 @@ const Hero: React.FC = () => {
                 </div>
               </motion.div>
 
-              {/* SPARK meaning */}
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-light tracking-[0.1em] md:tracking-[0.15em] text-light-gray/90 max-w-3xl mx-auto leading-relaxed">
-                <motion.span
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.6, duration: 0.5 }}
-                  className="relative inline-block"
-                >
+              {/* SPARK meaning - Simplified animation */}
+              <motion.p
+                {...fadeIn}
+                transition={{ duration: 0.4, delay: 0.2 }}
+                className="text-base sm:text-lg md:text-xl lg:text-2xl font-light tracking-[0.1em] md:tracking-[0.15em] text-light-gray/90 max-w-3xl mx-auto leading-relaxed"
+              >
+                <span className="relative inline-block">
                   <span className="text-dull-yellow font-bold text-glow">S</span>HAPING{' '} 
                   <span className="text-dull-yellow font-bold text-glow">P</span>ROGRESS{' '} 
                   <span className="text-dull-yellow font-bold text-glow">A</span>ND{' '} 
                   <span className="text-dull-yellow font-bold text-glow">R</span>EVOLUTIONIZING{' '} 
                   <span className="text-dull-yellow font-bold text-glow">K</span>NOWLEDGE
-                </motion.span>
-              </p>
+                </span>
+              </motion.p>
             </motion.div>
           </div>
 
           {/* Buttons */}
-          <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full px-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <button
-              onClick={() => setIsRegistrationOpen(true)}
-              className="bg-shining-yellow hover:bg-bright-orange hover:cursor-pointer text-black font-bold px-8 py-3 text-sm md:text-base rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 flex items-center group"
+          {!shouldReduceMotion ? (
+            <motion.div 
+              {...fadeInUp}
+              transition={{ duration: 0.3 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full px-4"
             >
-              Register Now
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
-            </button>
-            
-            <ScrollLink
-              to="schedule"
-              className="border border-sea-green text-white hover:bg-dull-sea-green/20 hover:cursor-pointer px-8 py-3 text-sm md:text-base rounded-full shadow-lg transform transition-all duration-300 hover:scale-105"
-            >
-              View Schedule
-            </ScrollLink>
-          </motion.div>
+              <button
+                onClick={() => setIsRegistrationOpen(true)}
+                className="bg-shining-yellow hover:bg-bright-orange hover:cursor-pointer text-black font-bold px-8 py-3 text-sm md:text-base rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 flex items-center group"
+              >
+                Register Now
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
+              </button>
+              
+              <ScrollLink
+                to="schedule"
+                className="border border-sea-green text-white hover:bg-dull-sea-green/20 hover:cursor-pointer px-8 py-3 text-sm md:text-base rounded-full shadow-lg transform transition-all duration-300 hover:scale-105"
+              >
+                View Schedule
+              </ScrollLink>
+            </motion.div>
+          ) : (
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full px-4">
+              <button
+                onClick={() => setIsRegistrationOpen(true)}
+                className="bg-shining-yellow hover:bg-bright-orange hover:cursor-pointer text-black font-bold px-8 py-3 text-sm md:text-base rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 flex items-center group"
+              >
+                Register Now
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
+              </button>
+              
+              <ScrollLink
+                to="schedule"
+                className="border border-sea-green text-white hover:bg-dull-sea-green/20 hover:cursor-pointer px-8 py-3 text-sm md:text-base rounded-full shadow-lg transform transition-all duration-300 hover:scale-105"
+              >
+                View Schedule
+              </ScrollLink>
+            </div>
+          )}
 
           {/* Event Details */}
           <motion.div 
+            {...fadeIn}
+            transition={{ duration: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center text-center sm:text-left w-full px-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
           >
             <div className="flex items-center gap-2 md:gap-3 text-light-gray">
               <CalendarDays className="text-sea-green" size={22} />

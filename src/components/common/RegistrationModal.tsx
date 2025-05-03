@@ -2,7 +2,8 @@
 
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Calendar, ExternalLink } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useReducedMotion } from '@/hooks/useReducedMotion';
 
 interface RegistrationModalProps {
   isOpen: boolean;
@@ -16,6 +17,16 @@ const REGISTRATION_URLS = {
 } as const;
 
 const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, onClose }) => {
+  const shouldReduceMotion = useReducedMotion();
+
+  // Simple fade animation
+  const fadeIn = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
+    transition: { duration: 0.2 }
+  };
+
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="bg-accent-black/95 backdrop-blur-lg border border-shining-yellow/20 text-white max-w-[90%] md:max-w-lg mx-auto p-4 md:p-6">
@@ -31,33 +42,39 @@ const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, onClose }
         </DialogHeader>
 
         <div className="space-y-3 py-4">
-          {Object.entries(REGISTRATION_URLS).map(([date, url], index) => (
-            <motion.div
-              key={date}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block w-full p-3 md:p-4 rounded-lg border border-dull-yellow/20 hover:border-shining-yellow bg-sea-green/5 hover:bg-gray/10 transition-all duration-300"
+          <AnimatePresence>
+            {Object.entries(REGISTRATION_URLS).map(([date, url], index) => (
+              <motion.div
+                key={date}
+                initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }}
+                animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+                transition={{ 
+                  duration: 0.2,
+                  delay: shouldReduceMotion ? 0 : index * 0.05 
+                }}
+                layout
               >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 md:gap-3">
-                    <div className="p-1.5 md:p-2 rounded-full bg-light-sea-green/10 group-hover:bg-light-sea-green/20 transition-colors">
-                      <Calendar className="w-4 h-4 md:w-5 md:h-5 text-shining-yellow" />
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block w-full p-3 md:p-4 rounded-lg border border-dull-yellow/20 hover:border-shining-yellow bg-sea-green/5 hover:bg-sea-green/10 transition-all duration-300"
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 md:gap-3">
+                      <div className="p-1.5 md:p-2 rounded-full bg-light-sea-green/10 group-hover:bg-light-sea-green/20 transition-colors">
+                        <Calendar className="w-4 h-4 md:w-5 md:h-5 text-shining-yellow" />
+                      </div>
+                      <span className="text-base md:text-lg text-gray-200 group-hover:text-white transition-colors">
+                        {date}
+                      </span>
                     </div>
-                    <span className="text-base md:text-lg text-gray-200 group-hover:text-white transition-colors">
-                      {date}
-                    </span>
+                    <ExternalLink className="w-4 h-4 md:w-5 md:h-5 text-gray-400 group-hover:text-shining-yellow transition-colors" />
                   </div>
-                  <ExternalLink className="w-4 h-4 md:w-5 md:h-5 text-gray-400 group-hover:text-shining-yellow transition-colors" />
-                </div>
-              </a>
-            </motion.div>
-          ))}
+                </a>
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
 
         <div className="text-center text-xs md:text-sm text-gray-400 pt-2">
