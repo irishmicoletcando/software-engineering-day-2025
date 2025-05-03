@@ -7,7 +7,6 @@ export interface Speaker {
   image?: string;
   linkedin: string;
   topics?: string[];
-  schedule?: string;
 }
 
 export interface Seminar {
