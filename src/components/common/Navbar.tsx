@@ -118,7 +118,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
         <div 
-          className="fixed inset-0 text-center bg-accent-black"
+          className="fixed inset-0 text-center bg-black"
           style={{ marginTop: "72px" }}
         >
           <div className="flex flex-col gap-6 w-full px-8 pt-8">

@@ -110,7 +110,6 @@ const Hero: React.FC = () => {
           >
             <button
               onClick={() => setIsRegistrationOpen(true)}
-              // className="bg-gradient-to-r from-bright-orange to-shining-yellow hover:from-bright-orange hover:to-dull-yellow hover:cursor-pointer text-black font-bold px-8 py-3 text-sm md:text-base rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 flex items-center group"
               className="bg-shining-yellow hover:bg-bright-orange hover:cursor-pointer text-black font-bold px-8 py-3 text-sm md:text-base rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 flex items-center group"
             >
               Register Now

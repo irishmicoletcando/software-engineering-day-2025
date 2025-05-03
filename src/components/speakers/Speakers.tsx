@@ -34,7 +34,7 @@ const Speakers: React.FC = () => {
               key={speaker.id}
               speaker={speaker}
               index={index}
-              onViewProfile={(id) => setSelectedSpeaker(id)} // Pass the callback
+              onViewProfile={(id) => setSelectedSpeaker(id)}
             />
           ))}
         </div>

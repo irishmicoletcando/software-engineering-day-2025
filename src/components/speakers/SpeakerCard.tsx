@@ -31,7 +31,6 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index, onViewProfile
             placeholder="blur"
             blurDataURL={speaker.image}
             className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-            priority={index < 3}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-accent-black via-transparent to-transparent"></div>
         </div>
