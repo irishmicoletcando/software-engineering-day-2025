@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Speaker } from '@/types/events';
 import { ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 interface SpeakerCardProps {
   speaker: Speaker;
@@ -21,10 +22,16 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index, onViewProfile
     >
       <div className="bg-gradient-to-br from-darkest-blue to-darkest-blue/70 border border-default-blue/10 overflow-hidden hover:border-default-blue/30 transition-all group rounded-lg">
         <div className="aspect-[3/2] relative overflow-hidden">
-          <img
-            src={speaker.image}
+          <Image
+            src={speaker.image || '/images/default-speaker.jpg'}
             alt={speaker.name}
+            width={800}
+            height={600}
+            quality={95}
+            placeholder="blur"
+            blurDataURL={speaker.image}
             className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+            priority={index < 3}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-darkest-blue via-transparent to-transparent"></div>
         </div>
