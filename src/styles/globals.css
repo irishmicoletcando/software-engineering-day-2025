@@ -208,38 +208,42 @@
 /* SPARK Text Styling */
 .spark-text {
   color: #FFFFFF;
+  -webkit-text-stroke: 0.5px #FFFFFF;
   text-shadow: 
     0 0 4px rgba(250, 195, 34, 0.4),
-    0 0 8px rgba(250, 195, 34, 0.3);
+    0 0 8px rgba(250, 195, 34, 0.3),
+    0 0 12px rgba(250, 195, 34, 0.2);
 }
 
-/* Base glow for mobile/tablet */
+/* Mobile devices */
 @media (max-width: 767px) {
   .spark-text {
+    -webkit-text-stroke: 0.25px #FFFFFF;
     text-shadow: 
-      0 0 2px rgba(250, 195, 34, 0.3),
-      0 0 4px rgba(250, 195, 34, 0.2);
+      0 0 4px rgba(250, 195, 34, 0.5),
+      0 0 8px rgba(250, 195, 34, 0.3);
   }
 }
 
 /* Medium devices */
 @media (min-width: 768px) and (max-width: 1023px) {
   .spark-text {
-    text-shadow: 
-      0 0 6px rgba(250, 195, 34, 0.4),
-      0 0 12px rgba(250, 195, 34, 0.3);
     -webkit-text-stroke: 0.5px #FFFFFF;
+    text-shadow: 
+      0 0 6px rgba(250, 195, 34, 0.5),
+      0 0 12px rgba(250, 195, 34, 0.3),
+      0 0 18px rgba(250, 195, 34, 0.2);
   }
 }
 
 /* Desktop and larger */
 @media (min-width: 1024px) {
   .spark-text {
+    -webkit-text-stroke: 1px #FFFFFF;
     text-shadow: 
       0 0 8px rgba(250, 195, 34, 0.5),
       0 0 16px rgba(250, 195, 34, 0.4),
       0 0 24px rgba(250, 195, 34, 0.2);
-    -webkit-text-stroke: 1px #FFFFFF;
   }
 }
 
