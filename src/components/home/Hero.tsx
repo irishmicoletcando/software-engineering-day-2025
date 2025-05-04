@@ -51,7 +51,6 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.3 }}
             >
               {[
-                { name: 'PUP', type: 'png' },
                 { name: 'CPE', type: 'png' },
                 { name: 'SED', type: 'png' }
               ].map((logo) => (
@@ -70,7 +69,6 @@ const Hero: React.FC = () => {
           ) : (
             <div className="flex justify-center items-center gap-4 md:gap-8">
               {[
-                { name: 'PUP', type: 'png' },
                 { name: 'CPE', type: 'png' },
                 { name: 'SED', type: 'png' }
               ].map((logo) => (
@@ -115,13 +113,21 @@ const Hero: React.FC = () => {
                 </div>
               </motion.div>
 
-              {/* SPARK meaning - Simplified animation */}
+              {/* SPARK meaning */}
               <motion.p
                 {...fadeIn}
                 transition={{ duration: 0.4, delay: 0.2 }}
                 className="text-base sm:text-lg md:text-xl lg:text-2xl font-light tracking-[0.1em] md:tracking-[0.15em] text-light-gray/90 max-w-3xl mx-auto leading-relaxed"
+                style={{ 
+                  fontFamily: 'daggersquare, sans-serif',
+                }}
               >
-                <span className="relative inline-block">
+                <span 
+                  className="relative inline-block"
+                  style={{ 
+                    fontFamily: 'daggersquare, sans-serif',
+                  }}
+                >
                   <span className="text-dull-yellow font-bold text-glow">S</span>HAPING{' '} 
                   <span className="text-dull-yellow font-bold text-glow">P</span>ROGRESS{' '} 
                   <span className="text-dull-yellow font-bold text-glow">A</span>ND{' '} 
