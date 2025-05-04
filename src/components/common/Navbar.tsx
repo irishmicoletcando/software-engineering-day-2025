@@ -54,9 +54,11 @@ const Navbar: React.FC = () => {
               alt="SED 2025 Logo" 
               className="w-10 h-10 md:w-12 md:h-12 group-hover:rotate-12 transition-transform duration-300" 
             />
-            <p className="hidden md:block ml-4 text-2xl font-bold">
-              {`</`}<span className='text-light-sea-green group-hover:text-shining-yellow transition-colors duration-300'>SED</span>{`2025>`}
-            </p>
+            <img
+              src="/SED_2025.png"
+              alt="SED 2025 Text Logo"
+              className="hidden md:block h-4 md:h-6 ml-4 group-hover:opacity-90 transition-opacity duration-300"
+            />
           </button>
 
           {/* Desktop Navigation Menu */}
