@@ -51,6 +51,7 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.3 }}
             >
               {[
+                { name: 'PUP', type: 'png' },
                 { name: 'CPE', type: 'png' },
                 { name: 'SED', type: 'png' }
               ].map((logo) => (
@@ -69,6 +70,7 @@ const Hero: React.FC = () => {
           ) : (
             <div className="flex justify-center items-center gap-4 md:gap-8">
               {[
+                { name: 'PUP', type: 'png' },
                 { name: 'CPE', type: 'png' },
                 { name: 'SED', type: 'png' }
               ].map((logo) => (
