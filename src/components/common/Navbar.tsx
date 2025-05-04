@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
           </button>
 
           {/* Desktop Navigation Menu */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center md:gap-1 lg:gap-8">
             <ScrollLink 
               to="speakers" 
               className="relative px-4 py-2 group"
