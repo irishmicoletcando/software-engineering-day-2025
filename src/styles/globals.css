@@ -213,26 +213,42 @@
     0 0 4px rgba(250, 195, 34, 0.4),
     0 0 8px rgba(250, 195, 34, 0.3),
     0 0 12px rgba(250, 195, 34, 0.2);
+  filter: brightness(1.1);
 }
 
-/* Mobile devices */
-@media (max-width: 767px) {
+/* Small mobile devices */
+@media (max-width: 374px) {
   .spark-text {
     -webkit-text-stroke: 0.25px #FFFFFF;
     text-shadow: 
-      0 0 4px rgba(250, 195, 34, 0.5),
-      0 0 8px rgba(250, 195, 34, 0.3);
+      0 0 3px rgba(250, 195, 34, 0.6),
+      0 0 6px rgba(250, 195, 34, 0.4),
+      0 0 9px rgba(250, 195, 34, 0.2);
+    filter: brightness(1.2);
   }
 }
 
-/* Medium devices */
+/* Mobile devices */
+@media (min-width: 375px) and (max-width: 767px) {
+  .spark-text {
+    -webkit-text-stroke: 0.25px #FFFFFF;
+    text-shadow: 
+      0 0 4px rgba(250, 195, 34, 0.6),
+      0 0 8px rgba(250, 195, 34, 0.4),
+      0 0 12px rgba(250, 195, 34, 0.2);
+    filter: brightness(1.15);
+  }
+}
+
+/* Tablets */
 @media (min-width: 768px) and (max-width: 1023px) {
   .spark-text {
     -webkit-text-stroke: 0.5px #FFFFFF;
     text-shadow: 
       0 0 6px rgba(250, 195, 34, 0.5),
-      0 0 12px rgba(250, 195, 34, 0.3),
-      0 0 18px rgba(250, 195, 34, 0.2);
+      0 0 12px rgba(250, 195, 34, 0.35),
+      0 0 18px rgba(250, 195, 34, 0.25);
+    filter: brightness(1.1);
   }
 }
 
@@ -247,12 +263,13 @@
   }
 }
 
-/* Reduce glow on high DPI displays */
+/* High DPI displays with reduced glow */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .spark-text {
     text-shadow: 
-      0 0 2px rgba(250, 195, 34, 0.25),
-      0 0 4px rgba(250, 195, 34, 0.15);
+      0 0 3px rgba(250, 195, 34, 0.4),
+      0 0 6px rgba(250, 195, 34, 0.3);
+    filter: brightness(1.05);
   }
 }
 
