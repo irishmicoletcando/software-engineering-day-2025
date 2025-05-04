@@ -43,7 +43,7 @@ const Navbar: React.FC = () => {
         ${isScrolled || isMobileMenuOpen ? 'bg-black shadow-lg' : 'bg-transparent'}
         ${isMobileMenuOpen ? 'bg-opacity-100' : isScrolled ? 'bg-opacity-95 backdrop-blur-md' : ''}
       `}>
-        <div className='flex justify-between items-center w-full px-8 md:px-14 py-5'>
+        <div className='flex justify-between items-center w-full px-8 md:px-10 py-5'>
           {/* Logo Button */}
           <button 
             onClick={scrollToHero}
